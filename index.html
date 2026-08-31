@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jubilee Homes — Master Messaging, Copy Deck & Sprint Roadmap</title>
+  <style>
+    :root {
+      --bg-primary: #f8fafc;
+      --bg-surface: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --brand-primary: #0284c7;
+      --brand-dark: #0369a1;
+      --accent: #f97316;
+      --border-color: #e2e8f0;
+      --code-bg: #f1f5f9;
+      --success: #16a34a;
+      --danger: #dc2626;
+      --purple: #7c3aed;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+
+    header {
+      padding: 36px 40px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-bottom: 3px solid var(--accent);
+    }
+
+    header h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    header p {
+      color: #94a3b8;
+      font-size: 15px;
+    }
+
+    .meta-bar {
+      display: flex;
+      gap: 20px;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid #334155;
+      font-size: 13px;
+      color: #cbd5e1;
+      flex-wrap: wrap;
+    }
+
+    .meta-item strong {
+      color: #ffffff;
+    }
+
+    main {
+      padding: 40px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-top: 36px;
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--brand-dark);
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    p, ul, ol {
+      margin-bottom: 14px;
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+
+    ul, ol {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .badge-primary { background: #e0f2fe; color: var(--brand-dark); }
+    .badge-accent { background: #ffedd5; color: var(--accent); }
+    .badge-purple { background: #f3e8ff; color: var(--purple); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px 0;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 10px 12px;
+      text-align: left;
+      border: 1px solid var(--border-color);
+    }
+
+    th {
+      background-color: var(--code-bg);
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    tr:nth-child(even) td {
+      background-color: #fafafa;
+    }
+
+    .callout {
+      background-color: #f0f9ff;
+      border-left: 4px solid var(--brand-primary);
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 18px 0;
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--brand-dark);
+      margin-bottom: 4px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .callout p {
+      margin: 0;
+      color: #0369a1;
+      font-size: 14px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 16px 0;
+    }
+
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .card-title {
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+
+    .banned { color: var(--danger); font-weight: 500; }
+    .approved { color: var(--success); font-weight: 600; }
+
+    .block-card {
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #ffffff;
+    }
+
+    .block-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    .block-number {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--brand-primary);
+      text-transform: uppercase;
+    }
+
+    .copy-field {
+      margin-bottom: 10px;
+    }
+
+    .copy-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .copy-value {
+      font-size: 14px;
+      color: var(--text-main);
+    }
+
+    .timeline-badge {
+      font-weight: 700;
+      color: var(--brand-dark);
+      background: #e0f2fe;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 4px;
+      font-size: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      main { padding: 20px; }
+      header { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Jubilee Homes: Plain-English Messaging Playbook & Sprint Roadmap</h1>
+    <p>Category Positioning, 7 Education Pillars, 10-Block Homepage Copy Deck & 10-Week Execution Schedule</p>
+    <div class="meta-bar">
+      <div class="meta-item"><strong>Client:</strong> Jubilee Homes (Brian Elbogen, CEO)</div>
+      <div class="meta-item"><strong>Lead Strategist:</strong> Michael Micheletti (Fractional CMO)</div>
+      <div class="meta-item"><strong>Framework:</strong> Two-Step Homeownership</div>
+      <div class="meta-item"><strong>Sprint Window:</strong> August 24 – November 1, 2026</div>
+      <div class="meta-item"><strong>Total Investment:</strong> $38,000 USD</div>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: PROJECT SCHEDULE & CONTENT PRODUCTION SPRINT -->
+    <section>
+      <h2>1. Project Schedule & Sprint Production Roadmap</h2>
+      <p>This 10-week sprint delivers a complete 132-email and 66-SMS lifecycle CRM engine, category reframing, and web conversion architecture, divided into structured review batches with 72–96 hour governance SLAs[cite: 5].</p>
+
+      <h3>10-Week Master Milestone Schedule</h3>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 20%;">Sprint Window</th>
+            <th style="width: 45%;">Core Focus & Content Deliverables</th>
+            <th style="width: 35%;">Governance & Review Milestone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span class="timeline-badge">Sprint 1</span><br>
+              <strong>Aug 24 – Sep 11</strong>
+            </td>
+            <td>
+              <strong>Foundation & Batch 1 Content:</strong><br>
+              • Workstreams 1, 2, 3 (Persona Guidelines, Two-Step Messaging, Tech Integration Specs)[cite: 5].<br>
+              • <strong>Track 1 ("Not Qualified... Yet"):</strong> 36 Emails + 18 SMS[cite: 5].<br>
+              • <strong>Track 4 (Drop-Off Reactivation):</strong> 18 Emails + 12 SMS[cite: 5].
+            </td>
+            <td>
+              <strong>Batch 1 Submission (Sept 11):</strong><br>
+              Delivered to Jubilee leadership for 72–96 hr compliance and executive sign-off[cite: 5].
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="timeline-badge">Sprint 2</span><br>
+              <strong>Sep 14 – Oct 2</strong>
+            </td>
+            <td>
+              <strong>High-Value Persona Nurture & Media Layer:</strong><br>
+              • <strong>Track 2 (Capital Optimizers):</strong> 54 Emails + 24 SMS[cite: 5].<br>
+              • <strong>Track 3 (Buy Boosters / Browsers):</strong> 24 Emails + 12 SMS[cite: 5].<br>
+              • <strong>The Affordability Pulse:</strong> Master newsletter template + 3 pre-written monthly editions[cite: 5].
+            </td>
+            <td>
+              <strong>Batch 2 Submission (Oct 2):</strong><br>
+              Delivered for review[cite: 5]. Batch 1 revisions finalized[cite: 5]. <em>Milestone 2 Payment Triggered ($9,500)[cite: 5].</em>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="timeline-badge">Sprint 3</span><br>
+              <strong>Oct 5 – Oct 16</strong>
+            </td>
+            <td>
+              <strong>Web Architecture & Persona Landing Paths:</strong><br>
+              • 10-Block Homepage Copy Deck[cite: 5].<br>
+              • 2 Persona Landing Experiences (Buy Boosters + Capital Optimizers)[cite: 5].<br>
+              • Sanity CMS Content Schemas & Figma Wireframe specs[cite: 5].
+            </td>
+            <td>
+              <strong>Batch 3 Submission (Oct 16):</strong><br>
+              Delivered for executive/web review[cite: 5]. Batch 2 revisions finalized[cite: 5].
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="timeline-badge">Sprint 4</span><br>
+              <strong>Oct 19 – Nov 1</strong>
+            </td>
+            <td>
+              <strong>Technical Implementation Oversight & QA:</strong><br>
+              • ActiveCampaign automation & dynamic tag QA[cite: 5].<br>
+              • Salesforce custom field & routing verification[cite: 5].<br>
+              • Sanity CMS staging QA and full launch readiness[cite: 5].
+            </td>
+            <td>
+              <strong>Final Sign-Off & Launch (Nov 1):</strong><br>
+              Full system acceptance[cite: 5]. <em>Final Milestone Payment ($9,500)[cite: 5].</em>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Sprint 1 Production Attack Plan (Batch 1: 54 Emails + 30 SMS)</h3>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title"><span class="badge badge-purple">Step 1</span> Foundation & Strategy Specs</div>
+          <p>Finalize Two-Step Lexicon, Salesforce intake custom fields, and ActiveCampaign behavioral tag mapping[cite: 5].</p>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="badge badge-purple">Step 2</span> Track 4 Recovery (18 Emails + 12 SMS)</div>
+          <p>Author immediate re-engagement sequences for calculator drop-offs, incomplete forms, and near-miss applicants[cite: 5].</p>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="badge badge-purple">Step 3</span> Track 1A: Credit Repair (18 Emails + 9 SMS)</div>
+          <p>Author step-by-step credit rebuilding modules, dispute tactics, and credit utilization benchmarks[cite: 5].</p>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="badge badge-purple">Step 4</span> Track 1B: DTI & Savings (18 Emails + 9 SMS)</div>
+          <p>Author debt snowball guides, automated down payment savings roadmaps, and quarterly pre-qual milestone check-ins[cite: 5].</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: CORE CONCEPT IN PLAIN ENGLISH -->
+    <section>
+      <h2>2. The Big Idea: Simple & Clear</h2>
+      <p>Over the last ten years, land prices exploded. Today, when you buy a house, half the price tag isn't the building—it's the expensive dirt underneath it. Traditional banks make you borrow money for both, driving up your down payment and monthly mortgage.</p>
+
+      <div class="callout">
+        <div class="callout-title">The Two-Step Fix</div>
+        <p><strong>Two-Step Homeownership separates the house from the land[cite: 5].</strong> You buy and own the actual home today with a normal mortgage[cite: 6]. Jubilee covers the land[cite: 6]. That means a much smaller loan, a lower down payment, and a monthly payment that actually fits your budget[cite: 6]. You can buy the land whenever you're ready—or just enjoy owning your home[cite: 6].</p>
+      </div>
+
+      <h3>Words We Use vs. Words We Never Use</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Confusing / Jargon (Banned)[cite: 5, 6]</th>
+            <th>Plain English (Use This)[cite: 5]</th>
+            <th>Why the Change Matters[cite: 5]</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="banned">Leasehold / 99-year ground lease[cite: 6]</td>
+            <td class="approved">Two-Step Homeownership[cite: 5]</td>
+            <td>Sounds like an easy path to ownership, not a never-ending rental trap[cite: 5].</td>
+          </tr>
+          <tr>
+            <td class="banned">Renting / leasing the dirt[cite: 6]</td>
+            <td class="approved">Own the house today, buy the land later[cite: 5]</td>
+            <td>Keeps the focus on owning your home deed from day one[cite: 5, 6].</td>
+          </tr>
+          <tr>
+            <td class="banned">We split the purchase with you[cite: 6]</td>
+            <td class="approved">Removing the land cost upfront</td>
+            <td>Prevents people from thinking this is a timeshare or shared-equity deal.</td>
+          </tr>
+          <tr>
+            <td class="banned">Your share of appreciation[cite: 6]</td>
+            <td class="approved">100% of your home's equity is yours[cite: 5, 6]</td>
+            <td>Clearly tells buyers they keep all the profit when they remodel or sell[cite: 5, 6].</td>
+          </tr>
+          <tr>
+            <td class="banned">Waiting for interest rates to drop</td>
+            <td class="approved">Borrowing half the money today[cite: 5, 6]</td>
+            <td>Reminds buyers that borrowing less cash beats waiting on the Federal Reserve[cite: 5].</td>
+          </tr>
+          <tr>
+            <td class="banned">Rejected / Unqualified lead</td>
+            <td class="approved">"Not Ready... Yet" (Get Qualified Path)[cite: 5]</td>
+            <td>Gives people hope and a clear plan to buy instead of a cold "no"[cite: 5].</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- SECTION 3: 7 SIMPLE EDUCATION POINTS -->
+    <section>
+      <h2>3. The 7 Things Every Buyer Needs to Know</h2>
+      
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title"><span class="badge badge-primary">01</span> The Land Problem</div>
+          <p>You aren't priced out by the house. You're priced out by the land[cite: 5]. We take the land cost out of the equation so you can afford the home[cite: 5].</p>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="badge badge-primary">02</span> The 2 Steps</div>
+          <p><strong>Step 1:</strong> Buy the house today with a standard home loan[cite: 6].<br><strong>Step 2:</strong> Buy the land down the road whenever you're ready[cite: 6].</p>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="badge badge-primary">03</span> Your Name on the Deed</div>
+          <p>You aren't a renter. Your name goes on the official county title deed at closing just like any normal home purchase[cite: 6].</p>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="badge badge-primary">04</span> You Keep Your Equity</div>
+          <p>Every dollar of home value growth and every mortgage payment you make builds equity that belongs 100% to you[cite: 5, 6]. Jubilee takes zero percent[cite: 6].</p>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="badge badge-primary">05</span> Total Homeowner Freedom</div>
+          <p>Paint the walls, remodel the kitchen, add a pool, or get pets[cite: 6]. You have complete control, and you can leave the home to your children[cite: 5, 6].</p>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="badge badge-primary">06</span> Don't Wait on Rates</div>
+          <p>Borrowing $400k at today's rates gives you a much lower payment than borrowing $800k at lower rates later[cite: 5, 6]. Smaller loans win every time[cite: 5].</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><span class="badge badge-primary">07</span> Clear Land Buyback</div>
+        <p>Buy the land in year 1, year 5, or year 15[cite: 6]. The price is set by trusted, public housing market data—no hidden fees, no balloon payments, and no deadlines[cite: 5, 6].</p>
+      </div>
+    </section>
+
+    <!-- SECTION 4: 3 BUYER TYPES -->
+    <section>
+      <h2>4. The 3 Buyer Types & How We Talk to Them</h2>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title">1. Families Needing Space (Buy Boosters) <span class="badge badge-accent">Affordability</span></div>
+          <p><strong>Who they are:</strong> Families squeezed in cramped rentals or condos who need a real backyard and good schools[cite: 5].</p>
+          <p><strong>What to say:</strong> <em>"Get the single-family home and school district your kids need today—without maxing out your budget."</em>[cite: 5]</p>
+          <p><strong>The Math:</strong> Buy an $800k house on a $500k budget with up to 75% less cash upfront[cite: 5, 6].</p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">2. Smart Money Savers (Capital Optimizers) <span class="badge badge-accent">Liquidity</span></div>
+          <p><strong>Who they are:</strong> High earners and professionals who have money, but hate the idea of locking $150k in cash into dirt[cite: 5].</p>
+          <p><strong>What to say:</strong> <em>"Own the home and all its upside while keeping six figures of cash growing in your investments."</em>[cite: 5]</p>
+          <p><strong>The Math:</strong> Put down a fraction of the cash, keep $100k+ in the stock market, and build home equity at the same time[cite: 5, 6].</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">3. "Not Ready... Yet" (Turnaround Path) <span class="badge badge-accent">Credit & Savings</span></div>
+        <p><strong>Who they are:</strong> People who got turned down by a traditional bank because of credit scores or debt[cite: 5].</p>
+        <p><strong>What to say:</strong> <em>"A 'not yet' is not a 'no.' Because you only finance the home, the bar to qualify is much lower. Here is your step-by-step fix."</em>[cite: 5]</p>
+        <p><strong>The Math:</strong> You only need to save $10k–$15k instead of $50k[cite: 5, 6]. We give you a 6-to-12 month plan to get approved[cite: 5].</p>
+      </div>
+    </section>
+
+    <!-- SECTION 5: 10-BLOCK HOMEPAGE COPY DECK -->
+    <section>
+      <h2>5. 10-Block Homepage Copy Deck (Production Ready)</h2>
+
+      <!-- BLOCK 01 -->
+      <div class="block-card">
+        <div class="block-header">
+          <span class="block-number">Block 01: Hero Section</span>
+          <span class="badge badge-primary">Top of Page</span>
+        </div>
+        <div class="copy-field">
+          <div class="copy-label">Eyebrow Tag</div>
+          <div class="copy-value">A BETTER WAY TO BUY A HOME[cite: 6]</div>
+        </div>
+        <div class="copy-field">
+          <div class="copy-label">Main Headline (H1)</div>
+          <div class="copy-value"><strong>Stop Renting. Stop Waiting for Rates to Drop. Buy the Home You Actually Want.</strong>[cite: 5, 6]</div>
+        </div>
+        <div class="copy-field">
+          <div class="copy-label">Sub-Headline</div>
+          <div class="copy-value">Expensive land makes home prices feel impossible[cite: 5]. Two-Step Homeownership separates the house from the land—giving you lower monthly payments, up to 75% less cash upfront, and 100% of your home’s equity[cite: 5, 6].</div>
+        </div>
+        <div class="copy-field">
+          <div class="copy-label">Buttons (CTAs)</div>
+          <div class="copy-value"><strong>Main:</strong> [Check My Buying Power] | <strong>Secondary:</strong> [See How It Works][cite: 5]</div>
+        </div>
+        <div class="copy-field">
+          <div class="copy-label">Trust Badges</div>
+          <div class="copy-value">✓ Your Name on the Deed &nbsp;&nbsp; ✓ Standard Home Loan &nbsp;&nbsp; ✓ No Penalty to Buy the Land &nbsp;&nbsp; ✓ Soft Credit Check Only[cite: 5, 6]</div>
+        </div>
+      </div>
+
+      <!-- BLOCK 02 -->
+      <div class="block-card">
+        <div class="block-header">
+          <span class="block-number">Block 02: Trust & Proof</span>
+          <span class="badge badge-primary">Credibility</span>
+        </div>
+        <div class="copy-field">
+          <div class="copy-label">Section Headline (H2)</div>
+          <div class="copy-value"><strong>Real Ownership. Standard Mortgages. Zero Gimmicks.</strong>[cite: 5, 6]</div>
+        </div>
+        <div class="copy-field">
+          <div class="copy-label">4 Key Facts</div>
+          <div class="copy-value">• <strong>Recorded Title Deed:</strong> Your name is on the legal county deed at closing. You own the home[cite: 6].<br>
+          • <strong>Standard Home Loans:</strong> Financed with regular mortgage lenders and standard title insurance[cite: 6].<br>
+          • <strong>Licensed & Regulated:</strong> CA Real Estate Broker (DRE #02217342) and Mortgage Broker (NMLS #2719294)[cite: 6].<br>
+          • <strong>Fair Land Pricing:</strong> Land values are set by independent housing data from the AEI Housing Center, not guesswork[cite: 6].</div>
+        </div>
+      </div>
+
+      <!-- BLOCK 03 -->
+      <div class="block-card">
+        <div class="block-header">
+          <span class="block-number">Block 03: The Problem We Solve</span>
+          <span class="badge badge-primary">Why It Works</span>
+        </div>
+        <div class="copy-field">
+          <div class="copy-label">Section Headline (H2)</div>
+          <div class="copy-value"><strong>You Don’t Have a Housing Problem. You Have an Expensive Land Problem.</strong>[cite: 5]</div>
+        </div>
+        <div class="copy-field">
+          <div class="copy-label">Explanation</div>
+          <div class="copy-value">When you look at an $800,000 house, almost half of that price tag is just the dirt it sits on[cite: 5]. Normal banks force you to borrow money for the house and the land together at today’s rates[cite: 5, 6]. When we remove the upfront land cost, your loan drops by up to half—giving you an affordable payment right now without waiting on interest rate cuts[cite: 5, 6].</div>
+        </div>
+      </div>
+
+      <!-- BLOCK 04 -->
+      <div class="block-card">
+        <div class="block-header">
+          <span class="block-number">Block 04: The 4 Simple Steps</span>
+          <span class="badge badge-primary">How It Works</span>
+        </div>
+        <div class="copy-field">
+          <div class="copy-label">Step Breakdown</div>
+          <div class="copy-value">
+            1. <strong>Shop Any Home on the Market:</strong> Tour single-family homes with your real estate agent ($300k to $4M+)[cite: 6].<br>
+            2. <strong>Buy the House with a Normal Loan:</strong> You finance and own the physical building. Jubilee covers the land[cite: 6].<br>
+            3. <strong>Enjoy Complete Homeowner Freedom:</strong> Paint, remodel, bring pets, and keep 100% of your home's equity[cite: 5, 6].<br>
+            4. <strong>Buy the Land When You're Ready:</strong> Purchase the land whenever you want, or just keep paying your low monthly land share[cite: 6].
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCK 05 -->
+      <div class="block-card">
+        <div class="block-header">
+          <span class="block-number">Block 05: Frequently Asked Questions</span>
+          <span class="badge badge-primary">Direct Answers</span>
+        </div>
+        <div class="copy-field">
+          <div class="copy-label">Q: Do I actually own the home?</div>
+          <div class="copy-value"><strong>A:</strong> Yes. Your name is on the legal deed recorded with the county[cite: 6]. You have the exact same rights as any homeowner to remodel, rent it out, refinance, or sell it[cite: 5, 6].</div>
+        </div>
+        <div class="copy-field">
+          <div class="copy-label">Q: What happens when I want to sell?</div>
+          <div class="copy-value"><strong>A:</strong> You list it on the MLS with an agent just like any house[cite: 6]. You keep 100% of your equity and renovation gains at closing[cite: 5, 6].</div>
+        </div>
+        <div class="copy-field">
+          <div class="copy-label">Q: What if I never buy the land?</div>
+          <div class="copy-value"><strong>A:</strong> That's totally fine[cite: 6]. There is no balloon payment, no forced deadline, and no rush[cite: 6]. Your agreement is secured for up to 99 years[cite: 6].</div>
+        </div>
+        <div class="copy-field">
+          <div class="copy-label">Q: Can I leave the house to my kids?</div>
+          <div class="copy-value"><strong>A:</strong> Yes[cite: 5]. Both the home deed and the land agreement can be passed down to your children or heirs in your will[cite: 5, 6].</div>
+        </div>
+      </div>
+
+      <!-- BLOCK 06 -->
+      <div class="block-card">
+        <div class="block-header">
+          <span class="block-number">Block 06: Choose Your Goal</span>
+          <span class="badge badge-primary">Paths</span>
+        </div>
+        <div class="copy-field">
+          <div class="copy-label">For Growing Families</div>
+          <div class="copy-value"><strong>Get the Yard and School District You Need.</strong> Stop squeezing into a condo. Qualify for a real home on a sensible monthly budget[cite: 5].</div>
+        </div>
+        <div class="copy-field">
+          <div class="copy-label">For Smart Money Savers</div>
+          <div class="copy-value"><strong>Keep Cash in Your Bank.</strong> Why tie up $150k in cash in dirt? Buy the home, build equity, and keep your savings growing in the market[cite: 5].</div>
+        </div>
+      </div>
+
+      <!-- BLOCK 07 -->
+      <div class="block-card">
+        <div class="block-header">
+          <span class="block-number">Block 07: Side-by-Side Comparison</span>
+          <span class="badge badge-primary">Comparison</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>What You Get</th>
+              <th>Buying Traditionally[cite: 6]</th>
+              <th>Jubilee Two-Step[cite: 5]</th>
+              <th>Renting an Apartment[cite: 5]</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Upfront Cash Needed</td>
+              <td>$40k – $150k+[cite: 5, 6]</td>
+              <td><strong>Up to 75% Less ($10k – $30k)</strong>[cite: 6]</td>
+              <td>First + Last + Deposit</td>
+            </tr>
+            <tr>
+              <td>Loan Amount</td>
+              <td>100% of House + Land[cite: 5]</td>
+              <td><strong>House Only (40%–60% Less)</strong>[cite: 5, 6]</td>
+              <td>$0 (No Asset)</td>
+            </tr>
+            <tr>
+              <td>Monthly Payment</td>
+              <td>High mortgage payment[cite: 6]</td>
+              <td><strong>15%–25% Lower Monthly</strong>[cite: 6]</td>
+              <td>100% Gone Every Month[cite: 5]</td>
+            </tr>
+            <tr>
+              <td>Who Keeps the Equity?</td>
+              <td>You do</td>
+              <td><strong>100% Yours (Jubilee takes 0%)</strong>[cite: 5, 6]</td>
+              <td>Landlord keeps everything</td>
+            </tr>
+            <tr>
+              <td>Can You Remodel / Add a Pool?</td>
+              <td>Yes</td>
+              <td><strong>Yes (Total Freedom)</strong>[cite: 5, 6]</td>
+              <td>No[cite: 5]</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- BLOCK 08 -->
+      <div class="block-card">
+        <div class="block-header">
+          <span class="block-number">Block 08: Interactive Payment Example</span>
+          <span class="badge badge-primary">Numbers Made Simple</span>
+        </div>
+        <div class="copy-field">
+          <div class="copy-label">Example on a $650,000 Home</div>
+          <div class="copy-value">
+            • <strong>Upfront Cash:</strong> ~$14,200 <em>(Save over $30,000 upfront compared to normal 5% down loans)[cite: 5, 6]</em><br>
+            • <strong>Total Monthly Payment:</strong> ~$3,180/mo <em>(Includes mortgage principal & interest, property taxes, home insurance, and Jubilee land share)[cite: 6]</em>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCK 09 -->
+      <div class="block-card">
+        <div class="block-header">
+          <span class="block-number">Block 09: Real Buyer Stories</span>
+          <span class="badge badge-primary">Social Proof</span>
+        </div>
+        <div class="copy-field">
+          <div class="copy-label">What Homeowners Say</div>
+          <div class="copy-value">
+            • <em>"We kept getting outbid on every house in our kids' school district. Jubilee cut our loan in half so we could finally buy a place with a yard."</em> — Jackie & David T.[cite: 5, 6]<br>
+            • <em>"I didn't want to lock $150k of my cash into a down payment at 7% interest. Two-Step let me buy the house and keep my cash invested in the stock market."</em> — Marcus K.[cite: 5]
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCK 10 -->
+      <div class="block-card">
+        <div class="block-header">
+          <span class="block-number">Block 10: Quick Start Form</span>
+          <span class="badge badge-primary">Next Step</span>
+        </div>
+        <div class="copy-field">
+          <div class="copy-label">Headline & Subtitle</div>
+          <div class="copy-value"><strong>See What You Can Buy with Two-Step.</strong>[cite: 5]<br>
+          Takes 2 minutes. Soft credit check only (won’t hurt your score). Zero commitment[cite: 5].</div>
+        </div>
+        <div class="copy-field">
+          <div class="copy-label">3 Quick Questions</div>
+          <div class="copy-value">1. What city or ZIP code are you shopping in?<br>2. What is your biggest goal? (Lower payment / Keep cash saved / Need credit help)[cite: 5, 6]<br>3. When do you want to move? (Next 60 days / 3–6 months / Just looking)[cite: 5]</div>
+        </div>
+        <div class="copy-field">
+          <div class="copy-label">Button</div>
+          <div class="copy-value"><strong>[Check My Buying Power]</strong>[cite: 5]</div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+</body>
+</html>
