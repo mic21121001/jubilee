@@ -141,13 +141,23 @@
       font-size: 17px;
       font-weight: 600;
       color: var(--brand-dark);
-      margin-top: 22px;
-      margin-bottom: 10px;
+      margin-top: 26px;
+      margin-bottom: 12px;
     }
 
     p {
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       color: #334155;
+    }
+
+    a {
+      color: var(--brand-blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     ul, ol {
@@ -197,6 +207,45 @@
       color: #9a3412;
     }
 
+    /* RESOURCE BOXES */
+    .resource-box {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      padding: 16px;
+      border-radius: 6px;
+      margin: 20px 0;
+    }
+
+    .resource-box h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #64748b;
+      margin-bottom: 8px;
+      letter-spacing: 0.05em;
+    }
+
+    .resource-box ul {
+      margin-bottom: 0;
+      padding-left: 18px;
+    }
+    
+    .resource-box li {
+      font-size: 14px;
+    }
+
+    /* SCRIPT BOX */
+    .script-box {
+      background: #f1f5f9;
+      padding: 15px;
+      border-radius: 4px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 13px;
+      color: #334155;
+      margin: 15px 0;
+      white-space: pre-wrap;
+      border: 1px dashed #cbd5e1;
+    }
+
     /* TABLES */
     table {
       width: 100%;
@@ -221,7 +270,7 @@
       background-color: #fafafa;
     }
 
-    /* CHECKLISTS & ACTION STEPS */
+    /* CHECKLISTS */
     .checklist {
       list-style: none;
       padding-left: 0;
@@ -245,7 +294,7 @@
       font-size: 16px;
     }
 
-    /* FOOTER & DISCLOSURES */
+    /* FOOTER */
     .book-footer {
       background: #f8fafc;
       border-top: 1px solid var(--border-color);
@@ -253,10 +302,6 @@
       font-size: 12px;
       color: var(--text-muted);
       line-height: 1.6;
-    }
-
-    .book-footer strong {
-      color: var(--navy-900);
     }
 
     /* PRINT CSS FOR 1-CLICK PDF GENERATION */
@@ -281,21 +326,9 @@
       .page-break {
         page-break-before: always;
       }
-      @page {
-        size: letter;
-        margin: 15mm 12mm;
-        @bottom-right {
-          content: "Page " counter(page);
-          font-size: 9pt;
-          color: #94a3b8;
-          font-family: sans-serif;
-        }
-        @bottom-left {
-          content: "Jubilee Homes | The Homebuyer Readiness Playbook";
-          font-size: 9pt;
-          color: #94a3b8;
-          font-family: sans-serif;
-        }
+      a {
+        text-decoration: underline;
+        color: var(--navy-900);
       }
     }
   </style>
@@ -304,10 +337,11 @@
 
 <div class="book-container">
 
+  <!-- COVER PAGE -->
   <div class="cover-page">
     <div class="brand-eyebrow">JUBILEE HOMES • EDUCATIONAL ADVISORY REPORT</div>
     <h1 class="cover-title">The Homebuyer<br><span>Readiness Playbook</span></h1>
-    <p class="cover-subtitle">From "Not Qualified... Yet" to Homeowner: Your Step-by-Step Guide to Credit Repair, DTI Optimization, and Two-Step Homeownership.</p>
+    <p class="cover-subtitle">From "Not Qualified... Yet" to Homeowner: The step-by-step guide to repairing credit, crushing debt, and using Two-Step Homeownership to unlock your front door.</p>
 
     <div class="cover-meta">
       <div><strong>Published By:</strong> Jubilee Homes Advisory Desk</div>
@@ -319,6 +353,7 @@
 
   <div class="content-body">
 
+    <!-- INTRODUCTION -->
     <div class="module">
       <div class="module-header">
         <span class="module-tag">Foreword</span>
@@ -328,12 +363,10 @@
       
       <p>Traditional banks force you into an outdated math problem: they make you borrow money for the house and the expensive land underneath it at the exact same time. When you separate the two, the barrier to qualify drops dramatically.</p>
 
-      <div class="callout">
-        <div class="callout-title">The Core Principle</div>
-        <p>You don't need a perfect 800 credit score or $60,000 sitting in cash to own a home. You just need a step-by-step roadmap to get your financial profile into fighting shape—and a loan structure that doesn't make you pay for expensive dirt upfront.</p>
-      </div>
+      <p>This book is not a generic budgeting pamphlet. It is a strict, step-by-step playbook filled with exact scripts, official government resources, and clear math to get your financial profile into fighting shape.</p>
     </div>
 
+    <!-- MODULE 1 -->
     <div class="module page-break">
       <div class="module-header">
         <span class="module-tag">Module 01</span>
@@ -342,78 +375,116 @@
       <p>Your credit score is the single biggest gatekeeper in traditional mortgage lending. But most buyers are optimizing for the wrong score.</p>
 
       <h3>VantageScore vs. Mortgage FICO (The Free App Trap)</h3>
-      <p>Free credit apps give you a <strong>VantageScore</strong>. Mortgage lenders do not use VantageScore. They use older, specialized mortgage scoring algorithms: <strong>FICO 2 (Experian), FICO 4 (TransUnion), and FICO 5 (Equifax)</strong>.</p>
+      <p>Free credit apps give you a <strong>VantageScore</strong>. Mortgage lenders do not use VantageScore. They use older, strict scoring algorithms: <strong>FICO 2 (Experian), FICO 4 (TransUnion), and FICO 5 (Equifax)</strong>.</p>
       
-      <ul>
-        <li>Free apps focus heavily on recent inquiries and broad trends.</li>
-        <li>Mortgage FICO scores penalize high credit card balances relative to your limits (utilization) much more aggressively.</li>
-        <li>Lenders pull all three bureau scores and use the <strong>middle score</strong> (not the average) to qualify your loan.</li>
-      </ul>
+      <p>Mortgage FICO scores penalize high credit card balances much more aggressively. Lenders pull all three bureau scores and use the <strong>middle score</strong> (not the average) to qualify your loan.</p>
+
+      <div class="resource-box">
+        <h4>Official Credit Resources</h4>
+        <ul>
+          <li><strong>Pull Your Official Free Reports:</strong> <a href="https://www.annualcreditreport.com" target="_blank">AnnualCreditReport.com</a> (The only federally authorized free site).</li>
+          <li><strong>See Your Actual FICO Scores:</strong> <a href="https://www.myfico.com" target="_blank">myFICO.com</a> (Paid, but shows the exact FICO 2, 4, and 5 scores lenders use).</li>
+        </ul>
+      </div>
 
       <h3>The "Statement Date" Calendar Hack</h3>
       <p>Most buyers pay their card on the <strong>Due Date</strong> to avoid interest fees. That keeps you out of trouble, but it might still be dragging your credit score down.</p>
 
       <div class="callout callout-tip">
         <div class="callout-title">The 5-Minute Calendar Rule</div>
-        <p>Credit card issuers report your balance to the bureaus on your <strong>Statement Closing Date</strong>—usually 20 to 25 days *before* your due date. Pay your balance down 2 to 3 days <em>before the statement closes</em> so your reported utilization shows below 10% to 30% every month.</p>
+        <p>Credit card issuers report your balance to the bureaus on your <strong>Statement Closing Date</strong>—usually 20 to 25 days *before* your due date. Pay your balance down 3 days <em>before the statement closes</em> so your reported utilization is permanently under 30%.</p>
       </div>
 
-      <h3>Disputing Bureau Errors (1 in 5 Reports Have Mistakes)</h3>
-      <p>A Federal Trade Commission study confirmed that 20% of credit reports contain material errors. Here is how to fix them for free:</p>
+      <h3>Disputing Bureau Errors (Step-by-Step)</h3>
+      <p>A study by the Federal Trade Commission confirmed that 1 in 5 credit reports contain material errors. You must dispute these directly with the three bureaus.</p>
       
       <ul class="checklist">
-        <li>Pull your 3 official reports for free at <strong>AnnualCreditReport.com</strong>.</li>
-        <li>Look for accounts you don't recognize, paid debts marked as "active collections," or incorrect late marks.</li>
-        <li>File an online dispute directly with each bureau. By law, they have 30 days to investigate and verify, or delete the negative item entirely.</li>
+        <li><strong>Equifax:</strong> Dispute online at <a href="https://www.equifax.com/personal/credit-report-services/credit-dispute/" target="_blank">Equifax.com/Dispute</a></li>
+        <li><strong>Experian:</strong> Dispute online at <a href="https://www.experian.com/disputes/main.html" target="_blank">Experian.com/Disputes</a></li>
+        <li><strong>TransUnion:</strong> Dispute online at <a href="https://dispute.transunion.com" target="_blank">Dispute.TransUnion.com</a></li>
       </ul>
 
-      <h3>The Collection Account Trap & Pay-for-Delete</h3>
-      <p><strong>Warning:</strong> Never pay off an old, dormant collection account without getting a written <strong>"Pay for Delete" agreement</strong>. On older mortgage FICO models, paying an old collection can reset the "date of last activity" to today—making an old problem look fresh and temporarily dropping your score.</p>
+      <h3>The Collection Account Trap: "Pay-for-Delete"</h3>
+      <p><strong>Warning:</strong> Never pay off an old, dormant collection account immediately. On older mortgage FICO models, paying an old collection can reset the "date of last activity" to today—making an old problem look brand new and dropping your score.</p>
+      
+      <p>Instead, negotiate a "Pay for Delete." You must get the collection agency to agree in writing to remove the account entirely if you pay it. Here is the exact script you can mail or email to the agency:</p>
+
+      <div class="script-box">Subject: Settlement Offer for Account #[Insert Account Number]
+
+To Whom It May Concern:
+
+I am writing to you regarding account #[Account Number]. I do not acknowledge liability for this debt in any form. However, I am willing to pay the account in full [or state a settled amount] in exchange for your written agreement to completely delete this entire account from my credit files at Equifax, Experian, and TransUnion.
+
+If you agree to this compromise, please send a signed agreement on your company letterhead stating that upon receipt of my payment, you will request complete deletion of this account from all credit reporting agencies. 
+
+Upon receipt of this written agreement, I will immediately send payment via [check/money order].
+
+Sincerely,
+[Your Name]
+[Your Address]</div>
     </div>
 
+    <!-- MODULE 2 -->
     <div class="module page-break">
       <div class="module-header">
         <span class="module-tag">Module 02</span>
-        <h2>DTI & Down Payment Savings Mechanics</h2>
+        <h2>DTI & The Debt Snowball Mechanics</h2>
       </div>
       <p>Mortgage underwriters care far more about your monthly debt obligations than the total dollar balance of your debt. This is called your <strong>Debt-to-Income (DTI) ratio</strong>.</p>
 
       <h3>The $100 Payment = $25,000 Borrowing Power Rule</h3>
-      <p>Conventional mortgage guidelines cap your total monthly debt payments (car notes, student loans, card minimums, and future house payment) at <strong>43% to 45%</strong> of your gross monthly income.</p>
+      <p>Conventional mortgage guidelines cap your total monthly debt payments (car notes, student loans, card minimums, and future house payment) at roughly <strong>45%</strong> of your gross monthly income. For every <strong>$100 per month</strong> in recurring debt minimums you eliminate, underwriters can approve you for approximately <strong>$20,000 to $25,000 more in home buying power</strong>.</p>
 
-      <div class="callout">
-        <div class="callout-title">The Underwriting Formula</div>
-        <p>For every <strong>$100 per month</strong> in recurring debt minimums you eliminate, underwriters can approve you for approximately <strong>$20,000 to $25,000 more in mortgage borrowing power</strong>.</p>
+      <h3>The Debt Snowball Strategy</h3>
+      <p>While financial planners often say to pay off the highest-interest debt first, homebuyers should use the <strong>Debt Snowball</strong> to eliminate minimum payments entirely, lowering DTI fast.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Debt Name</th>
+            <th>Total Balance</th>
+            <th>Monthly Minimum</th>
+            <th>Snowball Order</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Target Store Card</td>
+            <td>$450</td>
+            <td><strong>$35/mo</strong></td>
+            <td><strong>Pay 1st</strong> (Wipe out immediately to free up $35/mo)</td>
+          </tr>
+          <tr>
+            <td>Visa Credit Card</td>
+            <td>$2,100</td>
+            <td><strong>$80/mo</strong></td>
+            <td><strong>Pay 2nd</strong> (Use the extra $35 + $80 to wipe this out next)</td>
+          </tr>
+          <tr>
+            <td>Auto Loan</td>
+            <td>$12,000</td>
+            <td><strong>$350/mo</strong></td>
+            <td><strong>Pay 3rd</strong> (Pay minimum until cards are gone)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="resource-box">
+        <h4>Debt & Budgeting Tools</h4>
+        <ul>
+          <li><strong>Free Debt Snowball Calculator:</strong> <a href="https://www.calculator.net/debt-payoff-calculator.html" target="_blank">Calculator.net/Debt-Payoff</a></li>
+          <li><strong>Student Loan Repayment (IDR):</strong> If student loans are destroying your DTI, apply for an Income-Driven Repayment plan at <a href="https://studentaid.gov/idr/" target="_blank">StudentAid.gov</a>. Once your official monthly payment drops (even to $0), your mortgage underwriter can use that lower number.</li>
+        </ul>
       </div>
-
-      <h3>Debt Snowball vs. Avalanche for Homebuyers</h3>
-      <p>While financial planners often recommend the Avalanche method (paying highest-interest debt first), homebuyers should use the <strong>Debt Snowball</strong>:</p>
-      <ul>
-        <li>List debts by smallest balance with the highest monthly minimum payment.</li>
-        <li>Pay minimums on everything else and aggressively eliminate that small balance.</li>
-        <li>Wiping out a $1,200 store card with a $95/mo payment frees up $95 instantly, dropping your qualifying DTI overnight.</li>
-      </ul>
-
-      <h3>Auto Loans and Student Debt Nuances</h3>
-      <ul>
-        <li><strong>The 10-Payment Car Rule:</strong> If your auto loan or lease has 10 or fewer payments remaining, many mortgage programs permit the lender to exclude that entire monthly payment from your DTI.</li>
-        <li><strong>Student Loans:</strong> If your loans are on an Income-Driven Repayment (IDR) plan, obtain official servicer letters showing your actual payment (even if $0) to avoid banks applying an artificial 0.5% or 1% monthly penalty.</li>
-      </ul>
-
-      <h3>Building a $12,000 Down Payment Fund on Autopilot</h3>
-      <p>Because Two-Step separates the house from the land, you only need to save a 3% down payment on the structure ($10k–$15k), not $50k+ for the entire parcel.</p>
-      <ul class="checklist">
-        <li><strong>Automated Split Deposit:</strong> Route $200–$350 per paycheck directly into a dedicated home fund.</li>
-        <li><strong>Park in High-Yield Savings (HYSA):</strong> Earn 4%–5% APY with FDIC insurance instead of 0.01% in checking. A $12,000 balance earns ~$550/year in passive closing cash.</li>
-      </ul>
     </div>
 
+    <!-- MODULE 3 -->
     <div class="module page-break">
       <div class="module-header">
         <span class="module-tag">Module 03</span>
         <h2>Mortgage Loan Types Decoded</h2>
       </div>
-      <p>Understanding loan programs allows you to match your financial situation to the right financing product without taking on predatory terms.</p>
+      <p>You cannot play the game if you don't know the rules. Here is exactly what the three primary loan types require.</p>
 
       <table>
         <thead>
@@ -438,24 +509,27 @@
             <td>MIP required for the full 30-year loan life (unless refinancing).</td>
           </tr>
           <tr>
-            <td><strong>VA Loan</strong></td>
-            <td>None (usually 580+)</td>
-            <td>0%</td>
-            <td>No monthly PMI (veterans and active military only).</td>
-          </tr>
-          <tr>
             <td><strong>Jubilee Two-Step</strong></td>
-            <td>Standard (620+)</td>
+            <td>620+ (Standard Conventional)</td>
             <td><strong>3% on Structure Only</strong></td>
-            <td>PMI is cut in half because loan balance is 40%–60% smaller.</td>
+            <td>PMI is cut in half because your total loan balance is 40%–60% smaller.</td>
           </tr>
         </tbody>
       </table>
 
       <h3>The Reality of Private Mortgage Insurance (PMI)</h3>
-      <p>PMI protects the lender, not you. On a standard $800k purchase with 5% down, PMI can cost $200–$300/mo. On a Two-Step purchase of the same home, your structure loan is only ~$440,000, which reduces monthly PMI by more than half and accelerates principal payoff toward the 20% equity cancelation threshold.</p>
+      <p>PMI is a monthly fee added to your bill if you put down less than 20%. It does not protect you; it protects the bank if you stop paying. On a standard $800k purchase, PMI can cost $250/mo. Because Two-Step cuts your loan down to just the structure (e.g., $440k), your PMI fee is drastically reduced and you reach the 20% equity cancelation point years faster.</p>
+
+      <div class="resource-box">
+        <h4>Official Lending Guidelines</h4>
+        <ul>
+          <li><strong>FHA Loan Guidelines:</strong> Read the official rules at <a href="https://www.hud.gov/buying/loans" target="_blank">HUD.gov</a></li>
+          <li><strong>HUD-Approved Housing Counselors:</strong> Free, government-sponsored help with budgeting and credit. Find an agency near you at <a href="https://www.consumerfinance.gov/find-a-housing-counselor/" target="_blank">ConsumerFinance.gov</a>.</li>
+        </ul>
+      </div>
     </div>
 
+    <!-- MODULE 4 -->
     <div class="module page-break">
       <div class="module-header">
         <span class="module-tag">Module 04</span>
@@ -464,25 +538,30 @@
       <p>According to Freddie Mac, buyers who shop quotes from 3 or more lenders save an average of $3,000 to $9,000 over the life of their mortgage.</p>
 
       <h3>The CFPB 45-Day Rate Shopping Window</h3>
-      <p>Never fear shopping around. Under federal CFPB regulations, all mortgage credit inquiries that take place within a <strong>45-day window</strong> count as a single inquiry on your credit score. You can obtain quotes from 3 to 5 lenders with zero incremental penalty.</p>
+      <p>Never fear shopping around. Under federal rules established by the Consumer Financial Protection Bureau (CFPB), all mortgage credit inquiries that take place within a <strong>45-day window</strong> count as a single inquiry on your credit score. You can obtain quotes from 5 lenders with zero extra penalty.</p>
 
       <h3>The "Rate-Wait Trap"</h3>
-      <p>Many buyers say: <em>"I'm waiting for rates to fall back to 5%."</em> Here is why that strategy often backfires:</p>
-      
       <div class="callout callout-tip">
         <div class="callout-title">The Price Surge Paradox</div>
-        <p>When interest rates drop by 1%, millions of sidelined buyers enter the market simultaneously. Resulting bidding wars routinely push sale prices up $30,000 to $60,000 over asking price, erasing the monthly savings of a 1% rate cut. <strong>Borrowing $400,000 at today's rates delivers a lower monthly payment than borrowing $800,000 at lower rates later.</strong></p>
+        <p>Many buyers say, "I'm waiting for rates to drop." But when rates drop by 1%, millions of buyers enter the market. Bidding wars routinely push sale prices up $30,000+ over asking, erasing the savings of a lower rate. <strong>Borrowing $400,000 at today's rates gives you a lower monthly payment than borrowing $800,000 at lower rates later.</strong></p>
       </div>
 
-      <h3>Decoding Page 2 of Your Loan Estimate (LE)</h3>
-      <p>Lenders are legally required to deliver a standard 3-page Loan Estimate within 3 days of application. Always inspect Page 2:</p>
+      <h3>Decoding Your Loan Estimate (LE)</h3>
+      <p>Lenders must send you a standard 3-page Loan Estimate within 3 days of applying. Ignore the marketing and look directly at Page 2:</p>
       <ul>
-        <li><strong>Section A (Origination Fees):</strong> Application, processing, and underwriting fees. Compare this line carefully between lenders.</li>
-        <li><strong>Discount Points:</strong> Fees paid upfront to temporarily buy down an interest rate. Always calculate the break-even period (upfront cost divided by monthly savings).</li>
-        <li><strong>Section C (Services You Can Shop For):</strong> Title insurance and escrow settlement. You have the legal right to choose your own title provider to save hundreds in closing costs.</li>
+        <li><strong>Section A (Origination Fees):</strong> Application and underwriting fees. Some lenders advertise "low rates" but charge $4,000 in upfront fees here.</li>
+        <li><strong>Section C (Services You Can Shop For):</strong> Title insurance and escrow. You have the legal right to choose your own title provider to save hundreds of dollars.</li>
       </ul>
+
+      <div class="resource-box">
+        <h4>Loan Estimate Explainer Tool</h4>
+        <ul>
+          <li><strong>The CFPB Interactive Guide:</strong> Go line-by-line through a real Loan Estimate so you know exactly what you are paying for: <a href="https://www.consumerfinance.gov/owning-a-home/loan-estimate/" target="_blank">ConsumerFinance.gov/Loan-Estimate</a></li>
+        </ul>
+      </div>
     </div>
 
+    <!-- MODULE 5 -->
     <div class="module page-break">
       <div class="module-header">
         <span class="module-tag">Module 05</span>
@@ -521,48 +600,32 @@
             <td><strong>100% Yours (Jubilee takes 0%)</strong></td>
           </tr>
           <tr>
-            <td><strong>Remodeling & Pets</strong></td>
-            <td>Total Freedom</td>
-            <td><strong>Total Freedom</strong></td>
-          </tr>
-          <tr>
-            <td><strong>Land Buyback</strong></td>
+            <td><strong>Land Buyback Pricing</strong></td>
             <td>Purchased Day 1 at High Cost</td>
-            <td><strong>Buy anytime at fair market value</strong></td>
+            <td><strong>Based on objective, public data</strong></td>
           </tr>
         </tbody>
       </table>
 
-      <h3>The Transparent Land Buyback Roadmap</h3>
-      <p>You are never forced to buy the land. You have an agreement secured for up to 99 years, and you can buy the land in Year 2, Year 5, Year 15, or never. Land valuation is determined by objective, public housing data from the <strong>AEI Housing Center</strong>—no balloon payments, no subjective appraisals, and no gimmicks.</p>
-
-      <h3>Working With Your Real Estate Agent</h3>
-      <p>You can work with any licensed real estate agent in California. Your agent tours regular single-family homes on the MLS ($300k to $4M+), writes a standard purchase contract, and receives their standard commission at closing.</p>
-    </div>
-
-    <div class="module page-break">
-      <div class="module-header">
-        <span class="module-tag">Next Steps</span>
-        <h2>Your 5-Step Action Checklist</h2>
+      <div class="resource-box">
+        <h4>How is the Land Valued?</h4>
+        <ul>
+          <li><strong>No Hidden Appraisals:</strong> Jubilee does not make up the land price. We use objective, publicly available housing appreciation data tracked by the <strong>American Enterprise Institute (AEI) Housing Center</strong>. You can review their public housing data tools directly at <a href="https://www.aei.org/housing-center/" target="_blank">AEI.org/Housing-Center</a>.</li>
+        </ul>
       </div>
-      <p>Ready to put your homebuyer readiness plan into motion? Follow this sequential checklist:</p>
 
+      <h3>Your Next Steps with Jubilee</h3>
+      <p>You now have the roadmap. The next step is seeing exactly what your numbers look like in your target city. When you are ready:</p>
+      
       <ul class="checklist">
-        <li><strong>Step 1:</strong> Pull your free credit reports at AnnualCreditReport.com and file disputes on any confirmed errors.</li>
-        <li><strong>Step 2:</strong> Shift credit card payments to 3 days before your Statement Date to force utilization below 30%.</li>
-        <li><strong>Step 3:</strong> Execute the Debt Snowball on your smallest revolving balance to free up DTI room.</li>
-        <li><strong>Step 4:</strong> Set up an automated direct-deposit transfer into an FDIC-insured High-Yield Savings Account.</li>
-        <li><strong>Step 5:</strong> Run a 2-minute, soft-pull buying power check with Jubilee to see what home price range you unlock.</li>
+        <li><strong>Run a Soft-Pull Check:</strong> Check your exact Two-Step buying power in 2 minutes with zero impact on your credit score at <a href="https://jubileehomes.com/check">JubileeHomes.com/check</a>.</li>
+        <li><strong>Talk to an Advisor:</strong> Have questions about how your specific student loans or DTI works? Book a free, no-pressure 15-minute call with a Jubilee Advisor at <a href="https://jubileehomes.com/advisor">JubileeHomes.com/advisor</a>.</li>
       </ul>
-
-      <div class="callout">
-        <div class="callout-title">Check Your Buying Power Today</div>
-        <p>Explore what Two-Step Homeownership unlocks for your family. Soft credit check only (zero score impact): <strong>jubileehomes.com</strong></p>
-      </div>
     </div>
 
   </div>
 
+  <!-- BACK FOOTER & REGULATORY -->
   <div class="book-footer">
     <p><strong>Jubilee Homes Inc.</strong> | Equal Housing Opportunity</p>
     <p>California Real Estate Broker (DRE #02217342) | Mortgage Broker (NMLS #2719294). This publication is for educational purposes only and does not constitute a commitment to lend or formal financial advice. Loan approval is subject to underwriting verification of income, credit, and property appraisal.</p>
