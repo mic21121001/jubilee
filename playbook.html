@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Homebuyer Readiness Playbook — Jubilee Homes</title>
+  <style>
+    :root {
+      --bg-canvas: #f8fafc;
+      --bg-card: #ffffff;
+      --navy-900: #0f172a;
+      --navy-800: #1e293b;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --brand-blue: #0284c7;
+      --brand-dark: #0369a1;
+      --brand-light: #e0f2fe;
+      --accent-orange: #f97316;
+      --border-color: #e2e8f0;
+      --success-green: #16a34a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      line-height: 1.6;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .book-container {
+      max-width: 860px;
+      margin: 30px auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* COVER PAGE */
+    .cover-page {
+      background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-800) 100%);
+      color: #ffffff;
+      padding: 80px 60px 60px 60px;
+      position: relative;
+      border-bottom: 6px solid var(--accent-orange);
+      page-break-after: always;
+    }
+
+    .brand-eyebrow {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-orange);
+      margin-bottom: 18px;
+    }
+
+    .cover-title {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .cover-title span {
+      color: var(--brand-blue);
+    }
+
+    .cover-subtitle {
+      font-size: 18px;
+      color: #cbd5e1;
+      font-weight: 400;
+      max-width: 640px;
+      margin-bottom: 40px;
+      line-height: 1.5;
+    }
+
+    .cover-meta {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #334155;
+      padding-top: 24px;
+      font-size: 13px;
+      color: #94a3b8;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .cover-meta strong {
+      color: #ffffff;
+    }
+
+    /* CONTENT LAYOUT */
+    .content-body {
+      padding: 50px 60px;
+    }
+
+    .module {
+      margin-bottom: 50px;
+      page-break-after: auto;
+    }
+
+    .module-header {
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    .module-tag {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brand-blue);
+      background: var(--brand-light);
+      padding: 3px 10px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--navy-900);
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--brand-dark);
+      margin-top: 22px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 14px;
+      color: #334155;
+    }
+
+    ul, ol {
+      margin-bottom: 16px;
+      padding-left: 22px;
+      color: #334155;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* CALLOUT BOXES */
+    .callout {
+      background: #f0f9ff;
+      border-left: 4px solid var(--brand-blue);
+      padding: 18px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+    }
+
+    .callout-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--brand-dark);
+      margin-bottom: 6px;
+    }
+
+    .callout p {
+      margin: 0;
+      font-size: 14.5px;
+      color: #0369a1;
+    }
+
+    .callout-tip {
+      background: #fff7ed;
+      border-left-color: var(--accent-orange);
+    }
+
+    .callout-tip .callout-title {
+      color: #c2410c;
+    }
+
+    .callout-tip p {
+      color: #9a3412;
+    }
+
+    /* TABLES */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0 24px 0;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 10px 14px;
+      text-align: left;
+      border: 1px solid var(--border-color);
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 600;
+      color: var(--navy-900);
+    }
+
+    tr:nth-child(even) td {
+      background-color: #fafafa;
+    }
+
+    /* CHECKLISTS & ACTION STEPS */
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+      margin: 16px 0;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 10px;
+      color: var(--navy-900);
+    }
+
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--success-green);
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    /* FOOTER & DISCLOSURES */
+    .book-footer {
+      background: #f8fafc;
+      border-top: 1px solid var(--border-color);
+      padding: 30px 60px;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .book-footer strong {
+      color: var(--navy-900);
+    }
+
+    /* PRINT CSS FOR 1-CLICK PDF GENERATION */
+    @media print {
+      body {
+        background: #ffffff;
+        font-size: 11pt;
+      }
+      .book-container {
+        border: none;
+        box-shadow: none;
+        max-width: 100%;
+        margin: 0;
+      }
+      .content-body {
+        padding: 20mm 15mm;
+      }
+      .cover-page {
+        padding: 40mm 20mm;
+        page-break-after: always;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+      @page {
+        size: letter;
+        margin: 15mm 12mm;
+        @bottom-right {
+          content: "Page " counter(page);
+          font-size: 9pt;
+          color: #94a3b8;
+          font-family: sans-serif;
+        }
+        @bottom-left {
+          content: "Jubilee Homes | The Homebuyer Readiness Playbook";
+          font-size: 9pt;
+          color: #94a3b8;
+          font-family: sans-serif;
+        }
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="book-container">
+
+  <div class="cover-page">
+    <div class="brand-eyebrow">JUBILEE HOMES • EDUCATIONAL ADVISORY REPORT</div>
+    <h1 class="cover-title">The Homebuyer<br><span>Readiness Playbook</span></h1>
+    <p class="cover-subtitle">From "Not Qualified... Yet" to Homeowner: Your Step-by-Step Guide to Credit Repair, DTI Optimization, and Two-Step Homeownership.</p>
+
+    <div class="cover-meta">
+      <div><strong>Published By:</strong> Jubilee Homes Advisory Desk</div>
+      <div><strong>Framework:</strong> Two-Step Homeownership</div>
+      <div><strong>Reading Level:</strong> Plain English (7th Grade)</div>
+      <div><strong>Regulatory:</strong> CA DRE #02217342 | NMLS #2719294</div>
+    </div>
+  </div>
+
+  <div class="content-body">
+
+    <div class="module">
+      <div class="module-header">
+        <span class="module-tag">Foreword</span>
+        <h2>A "Not Yet" Is Never a "No"</h2>
+      </div>
+      <p>If you recently applied for a home loan and were told your credit score was too low, your debt was too high, or your down payment wasn't large enough—take a deep breath. Getting turned down by a traditional mortgage lender is frustrating, but in almost every single case, a "not yet" is simply a timing and structure problem.</p>
+      
+      <p>Traditional banks force you into an outdated math problem: they make you borrow money for the house and the expensive land underneath it at the exact same time. When you separate the two, the barrier to qualify drops dramatically.</p>
+
+      <div class="callout">
+        <div class="callout-title">The Core Principle</div>
+        <p>You don't need a perfect 800 credit score or $60,000 sitting in cash to own a home. You just need a step-by-step roadmap to get your financial profile into fighting shape—and a loan structure that doesn't make you pay for expensive dirt upfront.</p>
+      </div>
+    </div>
+
+    <div class="module page-break">
+      <div class="module-header">
+        <span class="module-tag">Module 01</span>
+        <h2>The Credit Score Turnaround Sprint</h2>
+      </div>
+      <p>Your credit score is the single biggest gatekeeper in traditional mortgage lending. But most buyers are optimizing for the wrong score.</p>
+
+      <h3>VantageScore vs. Mortgage FICO (The Free App Trap)</h3>
+      <p>Free credit apps give you a <strong>VantageScore</strong>. Mortgage lenders do not use VantageScore. They use older, specialized mortgage scoring algorithms: <strong>FICO 2 (Experian), FICO 4 (TransUnion), and FICO 5 (Equifax)</strong>.</p>
+      
+      <ul>
+        <li>Free apps focus heavily on recent inquiries and broad trends.</li>
+        <li>Mortgage FICO scores penalize high credit card balances relative to your limits (utilization) much more aggressively.</li>
+        <li>Lenders pull all three bureau scores and use the <strong>middle score</strong> (not the average) to qualify your loan.</li>
+      </ul>
+
+      <h3>The "Statement Date" Calendar Hack</h3>
+      <p>Most buyers pay their card on the <strong>Due Date</strong> to avoid interest fees. That keeps you out of trouble, but it might still be dragging your credit score down.</p>
+
+      <div class="callout callout-tip">
+        <div class="callout-title">The 5-Minute Calendar Rule</div>
+        <p>Credit card issuers report your balance to the bureaus on your <strong>Statement Closing Date</strong>—usually 20 to 25 days *before* your due date. Pay your balance down 2 to 3 days <em>before the statement closes</em> so your reported utilization shows below 10% to 30% every month.</p>
+      </div>
+
+      <h3>Disputing Bureau Errors (1 in 5 Reports Have Mistakes)</h3>
+      <p>A Federal Trade Commission study confirmed that 20% of credit reports contain material errors. Here is how to fix them for free:</p>
+      
+      <ul class="checklist">
+        <li>Pull your 3 official reports for free at <strong>AnnualCreditReport.com</strong>.</li>
+        <li>Look for accounts you don't recognize, paid debts marked as "active collections," or incorrect late marks.</li>
+        <li>File an online dispute directly with each bureau. By law, they have 30 days to investigate and verify, or delete the negative item entirely.</li>
+      </ul>
+
+      <h3>The Collection Account Trap & Pay-for-Delete</h3>
+      <p><strong>Warning:</strong> Never pay off an old, dormant collection account without getting a written <strong>"Pay for Delete" agreement</strong>. On older mortgage FICO models, paying an old collection can reset the "date of last activity" to today—making an old problem look fresh and temporarily dropping your score.</p>
+    </div>
+
+    <div class="module page-break">
+      <div class="module-header">
+        <span class="module-tag">Module 02</span>
+        <h2>DTI & Down Payment Savings Mechanics</h2>
+      </div>
+      <p>Mortgage underwriters care far more about your monthly debt obligations than the total dollar balance of your debt. This is called your <strong>Debt-to-Income (DTI) ratio</strong>.</p>
+
+      <h3>The $100 Payment = $25,000 Borrowing Power Rule</h3>
+      <p>Conventional mortgage guidelines cap your total monthly debt payments (car notes, student loans, card minimums, and future house payment) at <strong>43% to 45%</strong> of your gross monthly income.</p>
+
+      <div class="callout">
+        <div class="callout-title">The Underwriting Formula</div>
+        <p>For every <strong>$100 per month</strong> in recurring debt minimums you eliminate, underwriters can approve you for approximately <strong>$20,000 to $25,000 more in mortgage borrowing power</strong>.</p>
+      </div>
+
+      <h3>Debt Snowball vs. Avalanche for Homebuyers</h3>
+      <p>While financial planners often recommend the Avalanche method (paying highest-interest debt first), homebuyers should use the <strong>Debt Snowball</strong>:</p>
+      <ul>
+        <li>List debts by smallest balance with the highest monthly minimum payment.</li>
+        <li>Pay minimums on everything else and aggressively eliminate that small balance.</li>
+        <li>Wiping out a $1,200 store card with a $95/mo payment frees up $95 instantly, dropping your qualifying DTI overnight.</li>
+      </ul>
+
+      <h3>Auto Loans and Student Debt Nuances</h3>
+      <ul>
+        <li><strong>The 10-Payment Car Rule:</strong> If your auto loan or lease has 10 or fewer payments remaining, many mortgage programs permit the lender to exclude that entire monthly payment from your DTI.</li>
+        <li><strong>Student Loans:</strong> If your loans are on an Income-Driven Repayment (IDR) plan, obtain official servicer letters showing your actual payment (even if $0) to avoid banks applying an artificial 0.5% or 1% monthly penalty.</li>
+      </ul>
+
+      <h3>Building a $12,000 Down Payment Fund on Autopilot</h3>
+      <p>Because Two-Step separates the house from the land, you only need to save a 3% down payment on the structure ($10k–$15k), not $50k+ for the entire parcel.</p>
+      <ul class="checklist">
+        <li><strong>Automated Split Deposit:</strong> Route $200–$350 per paycheck directly into a dedicated home fund.</li>
+        <li><strong>Park in High-Yield Savings (HYSA):</strong> Earn 4%–5% APY with FDIC insurance instead of 0.01% in checking. A $12,000 balance earns ~$550/year in passive closing cash.</li>
+      </ul>
+    </div>
+
+    <div class="module page-break">
+      <div class="module-header">
+        <span class="module-tag">Module 03</span>
+        <h2>Mortgage Loan Types Decoded</h2>
+      </div>
+      <p>Understanding loan programs allows you to match your financial situation to the right financing product without taking on predatory terms.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Loan Type</th>
+            <th>Min. Credit Score</th>
+            <th>Min. Down Payment</th>
+            <th>Mortgage Insurance (PMI/MIP)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Conventional</strong></td>
+            <td>620</td>
+            <td>3% – 5%</td>
+            <td>PMI required until 20% equity; then automatically cancels.</td>
+          </tr>
+          <tr>
+            <td><strong>FHA Loan</strong></td>
+            <td>580</td>
+            <td>3.5%</td>
+            <td>MIP required for the full 30-year loan life (unless refinancing).</td>
+          </tr>
+          <tr>
+            <td><strong>VA Loan</strong></td>
+            <td>None (usually 580+)</td>
+            <td>0%</td>
+            <td>No monthly PMI (veterans and active military only).</td>
+          </tr>
+          <tr>
+            <td><strong>Jubilee Two-Step</strong></td>
+            <td>Standard (620+)</td>
+            <td><strong>3% on Structure Only</strong></td>
+            <td>PMI is cut in half because loan balance is 40%–60% smaller.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>The Reality of Private Mortgage Insurance (PMI)</h3>
+      <p>PMI protects the lender, not you. On a standard $800k purchase with 5% down, PMI can cost $200–$300/mo. On a Two-Step purchase of the same home, your structure loan is only ~$440,000, which reduces monthly PMI by more than half and accelerates principal payoff toward the 20% equity cancelation threshold.</p>
+    </div>
+
+    <div class="module page-break">
+      <div class="module-header">
+        <span class="module-tag">Module 04</span>
+        <h2>Shopping for a Mortgage Like a Pro</h2>
+      </div>
+      <p>According to Freddie Mac, buyers who shop quotes from 3 or more lenders save an average of $3,000 to $9,000 over the life of their mortgage.</p>
+
+      <h3>The CFPB 45-Day Rate Shopping Window</h3>
+      <p>Never fear shopping around. Under federal CFPB regulations, all mortgage credit inquiries that take place within a <strong>45-day window</strong> count as a single inquiry on your credit score. You can obtain quotes from 3 to 5 lenders with zero incremental penalty.</p>
+
+      <h3>The "Rate-Wait Trap"</h3>
+      <p>Many buyers say: <em>"I'm waiting for rates to fall back to 5%."</em> Here is why that strategy often backfires:</p>
+      
+      <div class="callout callout-tip">
+        <div class="callout-title">The Price Surge Paradox</div>
+        <p>When interest rates drop by 1%, millions of sidelined buyers enter the market simultaneously. Resulting bidding wars routinely push sale prices up $30,000 to $60,000 over asking price, erasing the monthly savings of a 1% rate cut. <strong>Borrowing $400,000 at today's rates delivers a lower monthly payment than borrowing $800,000 at lower rates later.</strong></p>
+      </div>
+
+      <h3>Decoding Page 2 of Your Loan Estimate (LE)</h3>
+      <p>Lenders are legally required to deliver a standard 3-page Loan Estimate within 3 days of application. Always inspect Page 2:</p>
+      <ul>
+        <li><strong>Section A (Origination Fees):</strong> Application, processing, and underwriting fees. Compare this line carefully between lenders.</li>
+        <li><strong>Discount Points:</strong> Fees paid upfront to temporarily buy down an interest rate. Always calculate the break-even period (upfront cost divided by monthly savings).</li>
+        <li><strong>Section C (Services You Can Shop For):</strong> Title insurance and escrow settlement. You have the legal right to choose your own title provider to save hundreds in closing costs.</li>
+      </ul>
+    </div>
+
+    <div class="module page-break">
+      <div class="module-header">
+        <span class="module-tag">Module 05</span>
+        <h2>The Two-Step Homeownership Advantage</h2>
+      </div>
+      <p>Two-Step Homeownership separates the physical house from the land. You buy and own the structure today with a standard mortgage, while Jubilee covers the land.</p>
+
+      <h3>Side-by-Side: Traditional Purchase vs. Jubilee Two-Step</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Traditional Purchase</th>
+            <th>Jubilee Two-Step</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>What You Borrow</strong></td>
+            <td>100% of House + Land ($800,000)</td>
+            <td><strong>House Only (~$440,000)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Down Payment Needed</strong></td>
+            <td>$40,000 – $80,000+ (5%–10%)</td>
+            <td><strong>~$13,200 (3% on Structure)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Title Deed</strong></td>
+            <td>Recorded in County Records</td>
+            <td><strong>Recorded in County Records</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Structure Equity</strong></td>
+            <td>100% Yours</td>
+            <td><strong>100% Yours (Jubilee takes 0%)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Remodeling & Pets</strong></td>
+            <td>Total Freedom</td>
+            <td><strong>Total Freedom</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Land Buyback</strong></td>
+            <td>Purchased Day 1 at High Cost</td>
+            <td><strong>Buy anytime at fair market value</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>The Transparent Land Buyback Roadmap</h3>
+      <p>You are never forced to buy the land. You have an agreement secured for up to 99 years, and you can buy the land in Year 2, Year 5, Year 15, or never. Land valuation is determined by objective, public housing data from the <strong>AEI Housing Center</strong>—no balloon payments, no subjective appraisals, and no gimmicks.</p>
+
+      <h3>Working With Your Real Estate Agent</h3>
+      <p>You can work with any licensed real estate agent in California. Your agent tours regular single-family homes on the MLS ($300k to $4M+), writes a standard purchase contract, and receives their standard commission at closing.</p>
+    </div>
+
+    <div class="module page-break">
+      <div class="module-header">
+        <span class="module-tag">Next Steps</span>
+        <h2>Your 5-Step Action Checklist</h2>
+      </div>
+      <p>Ready to put your homebuyer readiness plan into motion? Follow this sequential checklist:</p>
+
+      <ul class="checklist">
+        <li><strong>Step 1:</strong> Pull your free credit reports at AnnualCreditReport.com and file disputes on any confirmed errors.</li>
+        <li><strong>Step 2:</strong> Shift credit card payments to 3 days before your Statement Date to force utilization below 30%.</li>
+        <li><strong>Step 3:</strong> Execute the Debt Snowball on your smallest revolving balance to free up DTI room.</li>
+        <li><strong>Step 4:</strong> Set up an automated direct-deposit transfer into an FDIC-insured High-Yield Savings Account.</li>
+        <li><strong>Step 5:</strong> Run a 2-minute, soft-pull buying power check with Jubilee to see what home price range you unlock.</li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-title">Check Your Buying Power Today</div>
+        <p>Explore what Two-Step Homeownership unlocks for your family. Soft credit check only (zero score impact): <strong>jubileehomes.com</strong></p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="book-footer">
+    <p><strong>Jubilee Homes Inc.</strong> | Equal Housing Opportunity</p>
+    <p>California Real Estate Broker (DRE #02217342) | Mortgage Broker (NMLS #2719294). This publication is for educational purposes only and does not constitute a commitment to lend or formal financial advice. Loan approval is subject to underwriting verification of income, credit, and property appraisal.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
