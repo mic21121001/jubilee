@@ -1,93 +1,752 @@
-<!-- APPENDIX: MASTER RESOURCE DIRECTORY -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Homebuyer Readiness Playbook — Jubilee Homes</title>
+  <style>
+    :root {
+      --bg-canvas: #f8fafc;
+      --bg-card: #ffffff;
+      --navy-900: #0f172a;
+      --navy-800: #1e293b;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --brand-blue: #0284c7;
+      --brand-dark: #0369a1;
+      --brand-light: #e0f2fe;
+      --accent-orange: #f97316;
+      --border-color: #e2e8f0;
+      --success-green: #16a34a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      line-height: 1.6;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .book-container {
+      max-width: 860px;
+      margin: 30px auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* COVER PAGE */
+    .cover-page {
+      background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-800) 100%);
+      color: #ffffff;
+      padding: 80px 60px 60px 60px;
+      position: relative;
+      border-bottom: 6px solid var(--accent-orange);
+      page-break-after: always;
+    }
+
+    .brand-eyebrow {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-orange);
+      margin-bottom: 18px;
+    }
+
+    .cover-title {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .cover-title span {
+      color: var(--brand-blue);
+    }
+
+    .cover-subtitle {
+      font-size: 18px;
+      color: #cbd5e1;
+      font-weight: 400;
+      max-width: 640px;
+      margin-bottom: 40px;
+      line-height: 1.5;
+    }
+
+    .cover-meta {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #334155;
+      padding-top: 24px;
+      font-size: 13px;
+      color: #94a3b8;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .cover-meta strong {
+      color: #ffffff;
+    }
+
+    /* CONTENT LAYOUT */
+    .content-body {
+      padding: 50px 60px;
+    }
+
+    .module {
+      margin-bottom: 50px;
+      page-break-after: auto;
+    }
+
+    .module-header {
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    .module-tag {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--brand-blue);
+      background: var(--brand-light);
+      padding: 3px 10px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--navy-900);
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--brand-dark);
+      margin-top: 26px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: #334155;
+    }
+
+    a {
+      color: var(--brand-blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul, ol {
+      margin-bottom: 16px;
+      padding-left: 22px;
+      color: #334155;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* CALLOUT BOXES */
+    .callout {
+      background: #f0f9ff;
+      border-left: 4px solid var(--brand-blue);
+      padding: 18px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+    }
+
+    .callout-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--brand-dark);
+      margin-bottom: 6px;
+    }
+
+    .callout p {
+      margin: 0;
+      font-size: 14.5px;
+      color: #0369a1;
+    }
+
+    .callout-tip {
+      background: #fff7ed;
+      border-left-color: var(--accent-orange);
+    }
+
+    .callout-tip .callout-title {
+      color: #c2410c;
+    }
+
+    .callout-tip p {
+      color: #9a3412;
+    }
+
+    /* RESOURCE BOXES */
+    .resource-box {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      padding: 16px;
+      border-radius: 6px;
+      margin: 20px 0;
+    }
+
+    .resource-box h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #64748b;
+      margin-bottom: 8px;
+      letter-spacing: 0.05em;
+    }
+
+    .resource-box ul {
+      margin-bottom: 0;
+      padding-left: 18px;
+    }
+    
+    .resource-box li {
+      font-size: 14px;
+    }
+
+    /* SCRIPT BOX */
+    .script-box {
+      background: #f1f5f9;
+      padding: 15px;
+      border-radius: 4px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 13px;
+      color: #334155;
+      margin: 15px 0;
+      white-space: pre-wrap;
+      border: 1px dashed #cbd5e1;
+    }
+
+    /* TABLES */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0 24px 0;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 10px 14px;
+      text-align: left;
+      border: 1px solid var(--border-color);
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 600;
+      color: var(--navy-900);
+    }
+
+    tr:nth-child(even) td {
+      background-color: #fafafa;
+    }
+
+    /* CHECKLISTS */
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+      margin: 16px 0;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 10px;
+      color: var(--navy-900);
+    }
+
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--success-green);
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    /* FOOTER */
+    .book-footer {
+      background: #f8fafc;
+      border-top: 1px solid var(--border-color);
+      padding: 30px 60px;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* PRINT CSS FOR 1-CLICK PDF EXPORT */
+    @media print {
+      body {
+        background: #ffffff;
+        font-size: 11pt;
+      }
+      .book-container {
+        border: none;
+        box-shadow: none;
+        max-width: 100%;
+        margin: 0;
+      }
+      .content-body {
+        padding: 20mm 15mm;
+      }
+      .cover-page {
+        padding: 40mm 20mm;
+        page-break-after: always;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+      a {
+        text-decoration: underline;
+        color: var(--navy-900);
+      }
+      @page {
+        size: letter;
+        margin: 15mm 12mm;
+        @bottom-right {
+          content: "Page " counter(page);
+          font-size: 9pt;
+          color: #94a3b8;
+          font-family: sans-serif;
+        }
+        @bottom-left {
+          content: "Jubilee Homes | The Homebuyer Readiness Playbook";
+          font-size: 9pt;
+          color: #94a3b8;
+          font-family: sans-serif;
+        }
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="book-container">
+
+  <!-- COVER PAGE -->
+  <div class="cover-page">
+    <div class="brand-eyebrow">JUBILEE HOMES • EDUCATIONAL ADVISORY REPORT</div>
+    <h1 class="cover-title">The Homebuyer<br><span>Readiness Playbook</span></h1>
+    <p class="cover-subtitle">From "Not Qualified... Yet" to Homeowner: The step-by-step guide to repairing credit, crushing debt, and using Two-Step Homeownership to unlock your front door.</p>
+
+    <div class="cover-meta">
+      <div><strong>Published By:</strong> Jubilee Homes Advisory Desk</div>
+      <div><strong>Framework:</strong> Two-Step Homeownership</div>
+      <div><strong>Reading Level:</strong> Plain English (7th Grade)</div>
+      <div><strong>Regulatory:</strong> CA DRE #02217342 | NMLS #2719294</div>
+    </div>
+  </div>
+
+  <div class="content-body">
+
+    <!-- FOREWORD -->
+    <div class="module">
+      <div class="module-header">
+        <span class="module-tag">Foreword</span>
+        <h2>A "Not Yet" Is Never a "No"</h2>
+      </div>
+      <p>If you recently applied for a home loan and were told your credit score was too low, your debt was too high, or your down payment wasn't large enough—take a deep breath. Getting turned down by a traditional mortgage lender is frustrating, but in almost every single case, a "not yet" is simply a timing and structure problem.</p>
+      
+      <p>Traditional banks force you into an outdated math problem: they make you borrow money for the house and the expensive land underneath it at the exact same time. When you separate the two, the barrier to qualify drops dramatically.</p>
+
+      <p>This guide provides a step-by-step playbook filled with exact dispute templates, official government tools, and clear math to get your financial profile mortgage-ready.</p>
+    </div>
+
+    <!-- MODULE 1 -->
+    <div class="module page-break">
+      <div class="module-header">
+        <span class="module-tag">Module 01</span>
+        <h2>The Credit Score Turnaround Sprint</h2>
+      </div>
+      <p>Your credit score is the primary gatekeeper in traditional mortgage lending. Most buyers, however, optimize for the wrong score.</p>
+
+      <h3>VantageScore vs. Mortgage FICO (The Free App Trap)</h3>
+      <p>Free credit apps provide a <strong>VantageScore</strong>. Mortgage lenders do not use VantageScore; they rely on specialized mortgage scoring algorithms: <strong>FICO 2 (Experian), FICO 4 (TransUnion), and FICO 5 (Equifax)</strong>.</p>
+      
+      <p>Mortgage FICO formulas penalize high credit card balances relative to your credit limits (utilization) far more aggressively. Lenders pull all three bureau scores and evaluate the <strong>middle score</strong> (not the average) to determine your approval terms.</p>
+
+      <div class="resource-box">
+        <h4>Official Credit Resources</h4>
+        <ul>
+          <li><strong>Pull Your Official Free Reports:</strong> <a href="https://www.annualcreditreport.com" target="_blank">AnnualCreditReport.com</a> (The only federally authorized free credit report site).</li>
+          <li><strong>Check Your Actual Mortgage Scores:</strong> <a href="https://www.myfico.com" target="_blank">myFICO.com</a> (Paid consumer portal showing exact FICO 2, 4, and 5 scores).</li>
+        </ul>
+      </div>
+
+      <h3>The "Statement Date" Calendar Hack</h3>
+      <p>Paying your credit card balance on the <strong>Due Date</strong> avoids late fees, but it can still inadvertently depress your credit score.</p>
+
+      <div class="callout callout-tip">
+        <div class="callout-title">The 5-Minute Calendar Rule</div>
+        <p>Credit card issuers report your balance to the bureaus on your <strong>Statement Closing Date</strong>—typically 20 to 25 days *before* your due date. Pay your balance down 3 days <em>before the statement closes</em> so your reported utilization stays reliably below 10% to 30%.</p>
+      </div>
+
+      <h3>Disputing Bureau Errors (Step-by-Step)</h3>
+      <p>Federal Trade Commission research indicates that 1 in 5 credit reports contain confirmed errors. You can dispute inaccurate items directly with the three nationwide bureaus:</p>
+      
+      <ul class="checklist">
+        <li><strong>Equifax:</strong> Dispute online at <a href="https://www.equifax.com/personal/credit-report-services/credit-dispute/" target="_blank">Equifax.com/Dispute</a></li>
+        <li><strong>Experian:</strong> Dispute online at <a href="https://www.experian.com/disputes/main.html" target="_blank">Experian.com/Disputes</a></li>
+        <li><strong>TransUnion:</strong> Dispute online at <a href="https://dispute.transunion.com" target="_blank">Dispute.TransUnion.com</a></li>
+      </ul>
+
+      <h3>The Collection Account Trap: "Pay-for-Delete"</h3>
+      <p><strong>Warning:</strong> Avoid paying off an older, inactive collection account without a written agreement. Under older mortgage FICO models, paying a collection can update the "date of last activity" to the present day, making a dormant issue appear active and causing a temporary score drop.</p>
+      
+      <p>Instead, negotiate a "Pay-for-Delete." Request that the collection agency agree in writing to delete the credit trade line upon receipt of payment:</p>
+
+      <div class="script-box">Subject: Settlement Offer for Account #[Insert Account Number]
+
+To Whom It May Concern:
+
+I am writing to you regarding account #[Account Number]. I do not acknowledge liability for this debt in any form. However, I am willing to pay the account in full [or state a settled amount] in exchange for your written agreement to completely delete this entire trade line from my credit files at Equifax, Experian, and TransUnion.
+
+If you agree to this compromise, please provide a signed agreement on your company letterhead stating that upon receipt of payment, you will request complete deletion of this account from all credit reporting bureaus.
+
+Upon receipt of this written agreement, I will immediately submit payment via [check/money order].
+
+Sincerely,
+[Your Name]
+[Your Address]</div>
+    </div>
+
+    <!-- MODULE 2 -->
+    <div class="module page-break">
+      <div class="module-header">
+        <span class="module-tag">Module 02</span>
+        <h2>DTI & The Debt Snowball Mechanics</h2>
+      </div>
+      <p>Mortgage underwriters evaluate monthly debt service rather than cumulative debt balance. This metric is your <strong>Debt-to-Income (DTI) ratio</strong>.</p>
+
+      <h3>The $100 Payment = $25,000 Borrowing Power Formula</h3>
+      <p>Conventional mortgage guidelines generally cap your total recurring debt obligations (auto loans, student loans, credit card minimums, and projected housing payment) at roughly <strong>45%</strong> of your gross monthly income. For every <strong>$100 per month</strong> in recurring debt minimums eliminated, underwriting capacity expands by roughly <strong>$20,000 to $25,000 in mortgage purchasing power</strong>.</p>
+
+      <h3>The Debt Snowball Strategy</h3>
+      <p>While paying off highest-interest debt first minimizes overall interest, prospective homebuyers benefit more from the <strong>Debt Snowball</strong>, which eliminates recurring minimum monthly payments to reduce DTI rapidly.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Debt Account</th>
+            <th>Balance</th>
+            <th>Monthly Minimum</th>
+            <th>Snowball Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Retail Store Card</td>
+            <td>$450</td>
+            <td><strong>$35/mo</strong></td>
+            <td><strong>Target 1st</strong> (Pay off immediately to liberate $35/mo)</td>
+          </tr>
+          <tr>
+            <td>Bank Credit Card</td>
+            <td>$2,100</td>
+            <td><strong>$80/mo</strong></td>
+            <td><strong>Target 2nd</strong> (Combine liberated cash to retire next)</td>
+          </tr>
+          <tr>
+            <td>Installment Auto Loan</td>
+            <td>$12,000</td>
+            <td><strong>$350/mo</strong></td>
+            <td><strong>Target 3rd</strong> (Maintain standard payments until cards are cleared)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="resource-box">
+        <h4>Debt & Budgeting Resources</h4>
+        <ul>
+          <li><strong>Debt Snowball Calculator:</strong> Model your payoff schedule at <a href="https://www.calculator.net/debt-payoff-calculator.html" target="_blank">Calculator.net/Debt-Payoff</a>.</li>
+          <li><strong>Student Loan Management:</strong> Explore Income-Driven Repayment (IDR) plans via <a href="https://studentaid.gov/idr/" target="_blank">StudentAid.gov</a>. Establishing an approved, documented monthly payment allows underwriters to use that lower figure instead of an estimated standard percentage.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- MODULE 3 -->
+    <div class="module page-break">
+      <div class="module-header">
+        <span class="module-tag">Module 03</span>
+        <h2>Mortgage Loan Types Decoded</h2>
+      </div>
+      <p>Evaluating primary mortgage structures helps identify the right financing match while avoiding unnecessary fees.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Loan Structure</th>
+            <th>Min. Credit Score</th>
+            <th>Min. Down Payment</th>
+            <th>Mortgage Insurance (PMI/MIP)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Conventional</strong></td>
+            <td>620</td>
+            <td>3% – 5%</td>
+            <td>PMI required until 20% equity is established, then canceled.</td>
+          </tr>
+          <tr>
+            <td><strong>FHA Loan</strong></td>
+            <td>580</td>
+            <td>3.5%</td>
+            <td>MIP required for the full 30-year duration (unless refinanced).</td>
+          </tr>
+          <tr>
+            <td><strong>Jubilee Two-Step</strong></td>
+            <td>620+ (Conventional)</td>
+            <td><strong>3% on Structure Only</strong></td>
+            <td>PMI reduced proportionately because loan principal is 40%–60% lower.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Private Mortgage Insurance (PMI) Dynamics</h3>
+      <p>PMI protects the lender in case of default when a borrower puts down less than 20%. On an $800,000 single-family purchase, conventional PMI can add $200–$300/mo. Under Two-Step Homeownership, financing is restricted to the home structure (e.g., $440,000), which cuts PMI in half and speeds up principal reduction toward the 20% equity threshold.</p>
+
+      <div class="resource-box">
+        <h4>Lending Framework & Consumer Guidance</h4>
+        <ul>
+          <li><strong>Federal Housing Administration:</strong> Program rules and requirements at <a href="https://www.hud.gov/buying/loans" target="_blank">HUD.gov</a>.</li>
+          <li><strong>HUD-Approved Housing Counselors:</strong> Free or low-cost budgeting and credit counseling via <a href="https://www.consumerfinance.gov/find-a-housing-counselor/" target="_blank">ConsumerFinance.gov</a>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- MODULE 4 -->
+    <div class="module page-break">
+      <div class="module-header">
+        <span class="module-tag">Module 04</span>
+        <h2>Shopping for a Mortgage Like a Pro</h2>
+      </div>
+      <p>Research from Freddie Mac indicates that prospective borrowers who collect quotes from 3 or more lenders save an average of $3,000 to $9,000 over the life of a loan.</p>
+
+      <h3>The CFPB 45-Day Rate Shopping Protection</h3>
+      <p>Under Consumer Financial Protection Bureau (CFPB) rules, all mortgage inquiries performed within a <strong>45-day window</strong> are treated as a single inquiry on your credit score, allowing rate shopping across multiple lenders without incremental penalty.</p>
+
+      <h3>The "Rate-Wait Trap"</h3>
+      <div class="callout callout-tip">
+        <div class="callout-title">The Price Surge Paradox</div>
+        <p>Waiting for interest rates to drop can backfire. A 1% rate reduction often brings buyers back into the market en masse, sparking bidding wars that can drive purchase prices up $30,000 to $60,000. <strong>Financing a smaller principal balance at current rates frequently produces a lower monthly payment than borrowing a larger amount at lower rates later.</strong></p>
+      </div>
+
+      <h3>Evaluating Your Loan Estimate (LE)</h3>
+      <p>Lenders must issue a standardized 3-page Loan Estimate within 3 days of receiving an application. Key elements on Page 2 include:</p>
+      <ul>
+        <li><strong>Section A (Origination Charges):</strong> Application, processing, and underwriting fees. Review this section closely across lenders.</li>
+        <li><strong>Section C (Services You Can Shop For):</strong> Escrow and title settlement services. Borrowers have the right to shop and select their own settlement providers to minimize closing costs.</li>
+      </ul>
+
+      <div class="resource-box">
+        <h4>Loan Estimate Interactive Guide</h4>
+        <ul>
+          <li><strong>CFPB Loan Estimate Tool:</strong> Line-by-line verification guide at <a href="https://www.consumerfinance.gov/owning-a-home/loan-estimate/" target="_blank">ConsumerFinance.gov/Loan-Estimate</a>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- MODULE 5 -->
+    <div class="module page-break">
+      <div class="module-header">
+        <span class="module-tag">Module 05</span>
+        <h2>The Two-Step Homeownership Advantage</h2>
+      </div>
+      <p>Two-Step Homeownership separates the home structure from the underlying land. The buyer acquires and finances the home structure with a standard mortgage, while Jubilee funds the land.</p>
+
+      <h3>Comparison: Traditional Home Purchase vs. Jubilee Two-Step</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Purchase Element</th>
+            <th>Traditional Model</th>
+            <th>Jubilee Two-Step</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Financed Principal</strong></td>
+            <td>100% of House + Land ($800,000)</td>
+            <td><strong>Structure Only (~$440,000)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Down Payment Required</strong></td>
+            <td>$40,000 – $80,000+ (5%–10%)</td>
+            <td><strong>~$13,200 (3% on Structure)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Property Title</strong></td>
+            <td>Deeded in County Records</td>
+            <td><strong>Deeded in County Records</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Structural Equity</strong></td>
+            <td>100% Retained by Homeowner</td>
+            <td><strong>100% Retained by Homeowner</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Property Modifications</strong></td>
+            <td>Full Freedom</td>
+            <td><strong>Full Freedom</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Land Option</strong></td>
+            <td>Financed Upfront at Peak Cost</td>
+            <td><strong>Option to purchase anytime at fair market value</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="resource-box">
+        <h4>Objective Valuation Standards</h4>
+        <ul>
+          <li><strong>Transparent Data Tracking:</strong> Land valuations are pegged to publicly available housing appreciation indices from the <strong>American Enterprise Institute (AEI) Housing Center</strong>: <a href="https://www.aei.org/housing-center/" target="_blank">AEI.org/Housing-Center</a>.</li>
+        </ul>
+      </div>
+
+      <h3>Your Next Steps with Jubilee</h3>
+      <p>Take the next step to review numbers for your target market:</p>
+      
+      <ul class="checklist">
+        <li><strong>Soft-Pull Pre-Qualification:</strong> Evaluate your Two-Step purchasing power in 2 minutes with zero score impact at <a href="https://jubileehomes.com/check">JubileeHomes.com/check</a>.</li>
+        <li><strong>Advisory Review:</strong> Schedule a 15-minute consultation with a Jubilee Advisor to review your DTI and structure financing at <a href="https://jubileehomes.com/advisor">JubileeHomes.com/advisor</a>.</li>
+      </ul>
+    </div>
+
+    <!-- APPENDIX -->
     <div class="module page-break">
       <div class="module-header">
         <span class="module-tag">Appendix</span>
         <h2>The Independent Homebuyer Resource Directory</h2>
       </div>
-      <p>The national mortgage industry operates on standardized federal guidelines and consumer protections. Use these independent, impartial government and non-profit resources to verify your rights, access down payment programs, and manage credit.</p>
+      <p>The mortgage industry operates on standardized federal guidelines and consumer protections. Use these independent government and non-profit resources to verify your rights, research assistance programs, and manage credit profiles.</p>
 
       <h3>1. Federal Consumer Protection & Mortgage Comparison</h3>
-      <p>The Consumer Financial Protection Bureau (CFPB) is the official federal watchdog for consumer finance. These free tools help you audit lender fees and loan terms without marketing bias:</p>
+      <p>The Consumer Financial Protection Bureau (CFPB) provides independent tools to audit loan pricing and disclosures:</p>
       
       <table>
         <thead>
           <tr>
-            <th>Resource</th>
-            <th>Provider</th>
-            <th>What It Does</th>
+            <th>Resource Tool</th>
+            <th>Entity</th>
+            <th>Primary Function</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong><a href="https://www.consumerfinance.gov/owning-a-home/" target="_blank">CFPB "Buying a House" Suite</a></strong></td>
+            <td><strong><a href="https://www.consumerfinance.gov/owning-a-home/" target="_blank">CFPB Homebuyer Suite</a></strong></td>
             <td>CFPB</td>
-            <td>Interactive tool to explore current interest rates, loan terms, and closing cost expectations.</td>
+            <td>Interactive tool to model market interest rates, loan terms, and expected closing costs.</td>
           </tr>
           <tr>
             <td><strong><a href="https://www.consumerfinance.gov/owning-a-home/loan-estimate/" target="_blank">Loan Estimate Explainer</a></strong></td>
             <td>CFPB</td>
-            <td>A line-by-line interactive guide to catch hidden lender origination charges and discount points on Page 2 of your LE.</td>
+            <td>Line-by-line guide to auditing lender origination fees and points on Page 2 of your Loan Estimate.</td>
           </tr>
           <tr>
             <td><strong><a href="https://www.consumerfinance.gov/owning-a-home/closing-disclosure/" target="_blank">Closing Disclosure Checker</a></strong></td>
             <td>CFPB</td>
-            <td>Compare your final settlement statement with your initial Loan Estimate to verify fee lock guarantees.</td>
+            <td>Comparison framework to verify that final settlement figures align with approved initial estimates.</td>
           </tr>
           <tr>
-            <td><strong><a href="https://www.consumerfinance.gov/find-a-housing-counselor/" target="_blank">HUD-Approved Counseling Directory</a></strong></td>
+            <td><strong><a href="https://www.consumerfinance.gov/find-a-housing-counselor/" target="_blank">HUD Counseling Portal</a></strong></td>
             <td>U.S. Dept. of Housing & Urban Development</td>
-            <td>Connect with free or low-cost, government-certified housing counselors for personalized budgeting and credit rehabilitation.</td>
+            <td>National database of certified counseling agencies offering debt, credit, and budgeting guidance.</td>
           </tr>
         </tbody>
       </table>
 
       <h3>2. Credit Auditing, Dispute Portals & Debt Repayment</h3>
-      <p>Federal law guarantees access to your credit files and protections against incorrect reporting:</p>
+      <p>Federal statutes ensure consumer access to credit files and provide dispute avenues for erroneous data:</p>
 
       <ul class="checklist">
-        <li><strong><a href="https://www.annualcreditreport.com" target="_blank">AnnualCreditReport.com</a> (FTC-Authorized):</strong> The only federally mandated portal to pull your full, unabridged credit disclosures from Equifax, Experian, and TransUnion for free.</li>
-        <li><strong><a href="https://www.identitytheft.gov" target="_blank">IdentityTheft.gov</a> (Federal Trade Commission):</strong> The official government reporting site if you suspect fraudulent accounts or collections have been opened under your Social Security number.</li>
-        <li><strong><a href="https://studentaid.gov/idr/" target="_blank">Federal Student Aid (StudentAid.gov)</a>:</strong> Apply for Income-Driven Repayment (IDR) plans to lower student debt minimum obligations before mortgage underwriting.</li>
-        <li><strong><a href="https://www.myfico.com/credit-education/credit-scores/credit-score-versions" target="_blank">myFICO Credit Scoring Reference</a>:</strong> Detailed breakdown of why mortgage lenders use classic FICO scores (FICO 2, 4, 5) rather than credit card VantageScores.</li>
+        <li><strong><a href="https://www.annualcreditreport.com" target="_blank">AnnualCreditReport.com</a>:</strong> Federally authorized portal providing free disclosures from Equifax, Experian, and TransUnion.</li>
+        <li><strong><a href="https://www.identitytheft.gov" target="_blank">IdentityTheft.gov</a> (FTC):</strong> Government reporting site for suspected identity compromise or unauthorized credit lines.</li>
+        <li><strong><a href="https://studentaid.gov/idr/" target="_blank">Federal Student Aid (StudentAid.gov):</a></strong> Official application portal for Income-Driven Repayment (IDR) options.</li>
+        <li><strong><a href="https://www.myfico.com/credit-education/credit-scores/credit-score-versions" target="_blank">myFICO Scoring Reference:</a></strong> Explains the specific scoring models used in residential mortgage lending.</li>
       </ul>
 
-      <h3>3. Free First-Time Homebuyer Certificate Programs</h3>
-      <p>Completing a government-sponsored homebuyer course often unlocks specialized first-time buyer assistance programs and lower mortgage insurance rates:</p>
+      <h3>3. First-Time Homebuyer Education Programs</h3>
+      <p>Completing recognized homeownership courses can unlock first-time buyer assistance and lower mortgage insurance tiers:</p>
 
       <table>
         <thead>
           <tr>
-            <th>Course</th>
+            <th>Course Platform</th>
             <th>Sponsor</th>
-            <th>Format & Benefits</th>
+            <th>Format & Scope</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><strong><a href="https://www.fanniemae.com/education" target="_blank">Fannie Mae HomeView®</a></strong></td>
             <td>Fannie Mae</td>
-            <td>Free, 100% online, self-paced course covering saving, shopping, and closing. Generates an official Certificate of Completion recognized by conventional lenders.</td>
+            <td>Self-paced online module covering budgeting and closing. Provides a certificate accepted by conventional lenders.</td>
           </tr>
           <tr>
             <td><strong><a href="https://creditsmart.freddiemac.com" target="_blank">Freddie Mac CreditSmart®</a></strong></td>
             <td>Freddie Mac</td>
-            <td>Comprehensive financial education curriculum focusing on credit building, budgeting, and long-term asset management.</td>
+            <td>Financial literacy program focused on credit management and homebuyer readiness.</td>
           </tr>
         </tbody>
       </table>
 
       <h3>4. Down Payment Assistance & Market Research</h3>
-      <p>Before assuming you are priced out of a neighborhood, search for non-repayable grants and state-backed equity programs:</p>
+      <p>Research non-repayable grants and state-supported programs across regional markets:</p>
 
       <ul class="checklist">
-        <li><strong><a href="https://www.downpaymentresource.com" target="_blank">Down Payment Resource Directory:</a></strong> Searchable database tracking more than 2,000 national, state, and county down payment assistance programs, grants, and tax credits.</li>
-        <li><strong><a href="https://www.calhfa.ca.gov/homebuyer/programs/" target="_blank">California Housing Finance Agency (CalHFA):</a></strong> State-specific down payment assistance and subordinate financing options for California primary residents.</li>
-        <li><strong><a href="https://www.aei.org/housing/" target="_blank">AEI Housing Center (Land vs. Structure Indexes):</a></strong> Impartial, public datasets tracking single-family home price appreciation, construction replacement costs, and land share ratios nationwide.</li>
-        <li><strong><a href="https://www.fhfa.gov/data/hpi" target="_blank">FHFA House Price Index (HPI):</a></strong> The Federal Housing Finance Agency's public index measuring single-family price movements across every U.S. metro area.</li>
+        <li><strong><a href="https://www.downpaymentresource.com" target="_blank">Down Payment Resource:</a></strong> Database indexing thousands of municipal, state, and private homebuyer assistance programs.</li>
+        <li><strong><a href="https://www.calhfa.ca.gov/homebuyer/programs/" target="_blank">California Housing Finance Agency (CalHFA):</a></strong> Down payment assistance programs for California residents.</li>
+        <li><strong><a href="https://www.aei.org/housing/" target="_blank">AEI Housing Center:</a></strong> Independent datasets tracking land shares, construction values, and housing price appreciation.</li>
+        <li><strong><a href="https://www.fhfa.gov/data/hpi" target="_blank">FHFA House Price Index:</a></strong> Public home value tracking indices maintained by the Federal Housing Finance Agency.</li>
       </ul>
 
       <div class="callout callout-tip">
-        <div class="callout-title">Consumer Protection Reminder</div>
-        <p>You never have to pay a company to fix your credit or shop for a mortgage. The Fair Credit Reporting Act (FCRA) and Real Estate Settlement Procedures Act (RESPA) give you the legal right to dispute errors, shop loan rates within 45 days, and choose your own closing providers at no cost.</p>
+        <div class="callout-title">Consumer Protection Note</div>
+        <p>Under the Fair Credit Reporting Act (FCRA) and Real Estate Settlement Procedures Act (RESPA), you have the legal right to dispute inaccuracies on your credit report, shop rates within a 45-day window without multiple penalties, and select your own settlement service providers.</p>
       </div>
     </div>
+
+  </div>
+
+  <!-- FOOTER & REGULATORY -->
+  <div class="book-footer">
+    <p><strong>Jubilee Homes Inc.</strong> | Equal Housing Opportunity</p>
+    <p>California Real Estate Broker (DRE #02217342) | Mortgage Broker (NMLS #2719294). This publication is for informational and educational purposes only and does not constitute a commitment to lend or financial advice. Loan approval is subject to underwriting verification of income, credit, and property appraisal.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
