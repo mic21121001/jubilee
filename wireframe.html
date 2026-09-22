@@ -14,7 +14,6 @@
             --text-muted: #475569;
             --border-color: #e2e8f0;
             --white: #ffffff;
-            --success-green: #059669;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -203,7 +202,7 @@
             color: var(--navy-900);
         }
 
-        /* 5W1H Framework Grid */
+        /* Framework 5W1H Grid */
         .framework-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -230,6 +229,28 @@
 
         .framework-card h3 span {
             color: var(--brand-blue);
+        }
+
+        /* Trust Pillars Grid */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .trust-card {
+            background: var(--bg-canvas);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .trust-card h3 {
+            color: var(--navy-900);
+            font-size: 18px;
+            margin-bottom: 8px;
         }
 
         /* Customer Story Card */
@@ -308,7 +329,7 @@
     <section class="hero">
         <div class="container">
             <h1>Own the home. Leave the dirt to us.</h1>
-            <p>Traditional mortgages force you to finance the house and the expensive land underneath it at the exact same time. By separating the house from the land, Jubilee's homeownership model cuts your required down payment by up to 75%.</p>
+            <p>Buying a home shouldn't require draining your life savings for overpriced dirt. By separating the house from the land through Jubilee's homeownership model, you get standard county title ownership with up to 75% less upfront cash.</p>
             <a href="#calculator" class="btn">Check Your Buying Power</a>
             <div class="micro-copy">Soft credit check only. Zero impact on your credit score. Takes 2 minutes.</div>
             
@@ -317,7 +338,7 @@
                 <div>•</div>
                 <div><span class="badge">BBB Accredited</span> A+ Rating</div>
                 <div>•</div>
-                <div>Over $100M+ in Home Purchases Funded</div>
+                <div>Backed by Standard County Title Deeds</div>
             </div>
         </div>
     </section>
@@ -326,7 +347,7 @@
     <section class="section">
         <div class="container">
             <h2>Choose how Jubilee fits your goals.</h2>
-            <p>Select your primary objective to see how separating the house from the land changes your numbers.</p>
+            <p>Whether you're a first-time buyer trying to beat high down payments or a portfolio manager protecting liquidity, our model adapts to you.</p>
             
             <div class="grid-2">
                 <div class="card">
@@ -347,7 +368,7 @@
     <section id="calculator" class="section section-alt">
         <div class="container">
             <h2 style="text-align: center;">Interactive Buying Power Calculator</h2>
-            <p style="text-align: center;">Adjust the home price below to see how Jubilee's model reduces your upfront cash hurdle.</p>
+            <p style="text-align: center;">Adjust the home price below to see how standard financing compares to Jubilee's model.</p>
 
             <div class="calc-wrapper">
                 <div class="input-group">
@@ -424,8 +445,31 @@
         </div>
     </section>
 
-    <!-- Section 5: Customer Success Story -->
+    <!-- Section 5: Trust & Familiarity -->
     <section class="section section-alt">
+        <div class="container">
+            <h2>Completely standard real estate. No gimmicks.</h2>
+            <p>Families often ask if separating house and land is legal or complicated. The truth is, it's built on time-tested property principles.</p>
+
+            <div class="trust-grid">
+                <div class="trust-card">
+                    <h3>Standard Title Deeds</h3>
+                    <p>Your name is officially recorded on the county title deed as the legal owner of the home structure.</p>
+                </div>
+                <div class="trust-card">
+                    <h3>Traditional Lenders</h3>
+                    <p>Your mortgage for the house comes from trusted, mainstream banks and conventional lenders.</p>
+                </div>
+                <div class="trust-card">
+                    <h3>Your Own Agent</h3>
+                    <p>Work with any licensed real estate agent you choose. They guide you and earn their full commission.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Customer Success Story -->
+    <section class="section">
         <div class="container">
             <h2>Real Buyer Success Story</h2>
             <p>See how families are stepping into homes sooner with Jubilee.</p>
@@ -440,11 +484,11 @@
         </div>
     </section>
 
-    <!-- Section 6: Mechanism FAQ -->
-    <section class="section">
+    <!-- Section 7: Mechanism FAQ -->
+    <section class="section section-alt">
         <div class="container">
-            <h2>Common questions about separating house and land</h2>
-            <p>Clear, straightforward answers about our legal structure, title deeds, and your ownership rights.</p>
+            <h2>Common questions about our homeownership model</h2>
+            <p>Clear, straightforward answers about how we protect your ownership rights.</p>
 
             <div class="faq-grid">
                 <div class="faq-item">
@@ -460,15 +504,15 @@
                     <p>You sell your home on the open market just like any standard property. The new buyer can assume the land agreement or buy the house and land together. You keep all house profits.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Can I work with my own agent?</h3>
-                    <p>Yes. We work directly with your licensed real estate agent. You get the home you want, and your agent earns their full traditional buyer-broker commission at closing.</p>
+                    <h3>How long does the closing process take?</h3>
+                    <p>It operates on a standard 30-day escrow timeline, working seamlessly with title companies and traditional lenders.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 7: Adviser Access -->
-    <section class="section section-alt">
+    <!-- Section 8: Adviser Access -->
+    <section class="section">
         <div class="container" style="text-align: center;">
             <h2>Have questions about how the land agreement works?</h2>
             <p>Buying a home is the biggest financial decision most people make. It is completely normal to need more time to research. Our licensed Jubilee home advisers are available to help you model your exact numbers in plain English.</p>
