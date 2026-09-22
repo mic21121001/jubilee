@@ -83,6 +83,8 @@
             font-weight: 600;
             text-decoration: none;
             transition: background 0.2s;
+            border: none;
+            cursor: pointer;
         }
 
         .btn:hover {
@@ -126,24 +128,57 @@
             margin-bottom: 12px;
         }
 
-        .math-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .math-box {
+        /* Calculator & Chart Styles */
+        .calc-wrapper {
             background: var(--white);
             border: 1px solid var(--border-color);
-            padding: 30px;
-            border-radius: 8px;
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 40px;
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
             text-align: left;
         }
 
-        .math-box.highlight {
-            border-color: var(--brand-blue);
-            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.08);
+        .input-group {
+            margin-bottom: 24px;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--navy-900);
+            margin-bottom: 8px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 16px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        .comparison-table th {
+            color: var(--navy-900);
+            background: var(--bg-canvas);
+        }
+
+        .highlight-col {
+            background: var(--brand-light);
+            font-weight: 600;
+            color: var(--navy-900);
         }
 
         .disclosure {
@@ -177,13 +212,13 @@
         <div class="container">
             <h1>Own the home. Leave the dirt to us.</h1>
             <p>Traditional mortgages force you to finance the house and the expensive dirt underneath it at the exact same time. By separating the house from the land, Jubilee's homeownership model cuts your required down payment by up to seventy-five percent.</p>
-            <a href="#selector" class="btn">Check Your Buying Power</a>
+            <a href="#calculator" class="btn">Check Your Buying Power</a>
             <div class="micro-copy">Soft credit check only. Zero impact on your credit score. Takes two minutes.</div>
         </div>
     </section>
 
     <!-- Section 2: Split Persona Selector -->
-    <section id="selector" class="section">
+    <section class="section">
         <div class="container">
             <h2>Choose how Jubilee fits your goals.</h2>
             <p>Select your primary objective to explore how separating the house from the land changes your numbers.</p>
@@ -192,43 +227,66 @@
                 <div class="card">
                     <h3>Stop saving for an impossible down payment.</h3>
                     <p>You can afford the monthly payments, but saving $60,000 in cash for a traditional down payment keeps you stuck renting. Own a single-family home with as little as three percent down.</p>
-                    <a href="#" class="btn">Calculate My Savings</a>
+                    <a href="#calculator" class="btn">Calculate My Savings</a>
                 </div>
                 <div class="card">
                     <h3>Keep your portfolio compounding.</h3>
                     <p>Why sink hundreds of thousands of liquid cash into low-yield dirt? Let Jubilee cover the land so you capture structural upside while keeping your dry powder free for investments or business growth.</p>
-                    <a href="#" class="btn">Model My Liquidity</a>
+                    <a href="#calculator" class="btn">Model My Liquidity</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 3: Transparent Math Module -->
-    <section class="section section-alt">
-        <div class="container" style="text-align: center;">
-            <h2>Traditional Buying versus Jubilee's Model</h2>
-            <p>See how unbundling the land changes the financial structure of an $900,000 home purchase.</p>
+    <!-- Section 3: Interactive Calculator & Comparison Chart -->
+    <section id="calculator" class="section section-alt">
+        <div class="container">
+            <h2 style="text-align: center;">Interactive Buying Power Calculator</h2>
+            <p style="text-align: center;">Adjust the home price to see how Jubilee's model changes your upfront cash.</p>
 
-            <div class="math-grid">
-                <div class="math-box">
-                    <h3>Traditional Mortgage</h3>
-                    <p style="font-size: 15px; margin-top: 10px;">Requires financing the house and land together. Demands massive upfront cash, high monthly debt ratios, and locks up liquid capital in low-yield land equity.</p>
+            <div class="calc-wrapper">
+                <div class="input-group">
+                    <label for="homePrice">Target Home Price ($):</label>
+                    <input type="number" id="homePrice" value="900000" step="25000" oninput="updateMath()">
                 </div>
-                <div class="math-box highlight">
-                    <h3>Jubilee's Model</h3>
-                    <p style="font-size: 15px; margin-top: 10px;">You finance the house structure (~$500,000) while Jubilee funds the land (~$400,000). Your monthly cost includes your mortgage and fixed land lease. You keep one hundred percent of the home equity.</p>
-                </div>
-            </div>
 
-            <div class="disclosure">
-                *Jubilee's homeownership model means you buy and own the home; Jubilee owns the land under it and you lease it for up to ninety-nine years. Your monthly housing cost includes both your mortgage payment and your land lease payment—the figures above include both. You keep 100% of the equity in the home itself. Appreciation on the land is shared under the terms of your lease, and you have the option to buy the land at any time. Example figures only, your terms depend on the home, your credit and your market.
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Traditional Mortgage</th>
+                            <th class="highlight-col">Jubilee's Model</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Down Payment Required (3%)</td>
+                            <td id="tradDown">$27,000</td>
+                            <td class="highlight-col" id="jubDown">$15,000</td>
+                        </tr>
+                        <tr>
+                            <td>Principal Financed</td>
+                            <td id="tradLoan">$873,000</td>
+                            <td class="highlight-col" id="jubLoan">$500,000</td>
+                        </tr>
+                        <tr>
+                            <td>Estimated Monthly Payment</td>
+                            <td id="tradMonthly">$6,100</td>
+                            <td class="highlight-col" id="jubMonthly">$4,200</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="disclosure">
+                    *Jubilee's homeownership model means you buy and own the home; Jubilee owns the land under it and you lease it for up to ninety-nine years. Your monthly housing cost includes both your mortgage payment and your land lease payment—the figures above include both. You keep 100% of the equity in the home itself. Appreciation on the land is shared under the terms of your lease, and you have the option to buy the land at any time. Example figures only, your terms depend on the home, your credit and your market.
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Section 4: Adviser Access -->
     <section class="section">
-        <div class="container">
+        <div class="container" style="text-align: center;">
             <h2>Have questions about how the land agreement works?</h2>
             <p>Buying a home is the biggest financial decision most people make. It is completely normal to need more time to research. Our licensed Jubilee home advisers are available to help you model your exact numbers in plain English.</p>
             <a href="#" class="btn">Speak With An Adviser</a>
@@ -239,5 +297,30 @@
         <p>&copy; 2026 Jubilee Homes Inc. All rights reserved.</p>
     </footer>
 
+    <script>
+        function updateMath() {
+            const price = parseFloat(document.getElementById('homePrice').value) || 0;
+            // Assuming roughly 45% land value, 55% structure value for illustration
+            const structurePrice = price * 0.55;
+            
+            const tradDown = price * 0.03;
+            const tradLoan = price * 0.97;
+            const tradMonthly = Math.round(price * 0.0068);
+
+            // Jubilee logic: down payment and loan apply to structure only, plus land lease approximation
+            const jubDown = structurePrice * 0.03;
+            const jubLoan = structurePrice * 0.97;
+            const jubMonthly = Math.round((structurePrice * 0.0068) + (price * 0.45 * 0.004));
+
+            document.getElementById('tradDown').innerText = '$' + Math.round(tradDown).toLocaleString();
+            document.getElementById('jubDown').innerText = '$' + Math.round(jubDown).toLocaleString();
+            
+            document.getElementById('tradLoan').innerText = '$' + Math.round(tradLoan).toLocaleString();
+            document.getElementById('jubLoan').innerText = '$' + Math.round(jubLoan).toLocaleString();
+            
+            document.getElementById('tradMonthly').innerText = '$' + tradMonthly.toLocaleString() + '/mo';
+            document.getElementById('jubMonthly').innerText = '$' + jubMonthly.toLocaleString() + '/mo';
+        }
+    </script>
 </body>
 </html>
