@@ -287,7 +287,7 @@
         /* FAQ Grid */
         .faq-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 40px;
             margin-top: 40px;
             text-align: left;
@@ -329,7 +329,7 @@
     <section class="hero">
         <div class="container">
             <h1>Own the home. Leave the dirt to us.</h1>
-            <p>The standard way to buy a home with less cash. By separating the house from the land, Jubilee's homeownership model gives you a normal county title deed for up to 75% less upfront cash.</p>
+            <p>The standard way to buy a home with less cash. By separating the house from the land, Jubilee's homeownership model allows you to fully own your home while requiring up to 75% less upfront cash.</p>
             <a href="#calculator" class="btn">Check Your Buying Power</a>
             <div class="micro-copy">Soft credit check only. Zero impact on your credit score. Takes two minutes.</div>
             
@@ -338,7 +338,12 @@
                 <div>•</div>
                 <div><span class="badge">BBB Accredited</span> A+ Rating</div>
                 <div>•</div>
-                <div>Backed by Standard County Title Deeds</div>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--navy-900)" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 12h3v8h14v-8h3L12 2zm0 2.8l5 5V18H7v-8.2l5-5zm-3 7h6v2H9v-2zm0 3h6v2H9v-2z"/>
+                    </svg>
+                    Equal Housing Lender
+                </div>
             </div>
         </div>
     </section>
@@ -404,7 +409,7 @@
                 </table>
 
                 <div class="disclosure">
-                    *Jubilee's homeownership model means you buy and own the home; Jubilee owns the land under it and you lease it for up to 99 years. Your monthly housing cost includes both your mortgage payment and your land lease payment—the figures above include both. You keep 100% of the equity in the home itself. Appreciation on the land is shared under the terms of your lease, and you have the option to buy the land at any time. Example figures only, your terms depend on the home, your credit and your market.
+                    *Jubilee's homeownership model means you buy and own the home; Jubilee owns the land under it and provides a land agreement for up to 99 years. Your monthly housing cost includes both your mortgage payment and your land agreement payment—the figures above include both. You keep one hundred percent of the equity in the home itself. Appreciation on the land is shared under the terms of your agreement, and you have the option to buy the land at any time. Example figures only, your terms depend on the home, your credit and your market.
                 </div>
             </div>
         </div>
@@ -435,7 +440,7 @@
                 </div>
                 <div class="framework-card">
                     <h3><span>05</span> How</h3>
-                    <p>Your name goes on the county title deed as the legal owner of the structure. You pay a predictable monthly land lease alongside your mortgage.</p>
+                    <p>You are the legal owner of the home. You pay a predictable monthly land agreement payment alongside your standard mortgage.</p>
                 </div>
                 <div class="framework-card">
                     <h3><span>06</span> Why</h3>
@@ -453,8 +458,8 @@
 
             <div class="trust-grid">
                 <div class="trust-card">
-                    <h3>Standard Title Deeds</h3>
-                    <p>Your name is officially recorded on the county title deed as the legal owner of the home structure.</p>
+                    <h3>Full Homeownership</h3>
+                    <p>You are the sole, legal owner of the home, exactly the same as a traditional purchase.</p>
                 </div>
                 <div class="trust-card">
                     <h3>Traditional Lenders</h3>
@@ -493,7 +498,7 @@
             <div class="faq-grid">
                 <div class="faq-item">
                     <h3>Who owns the home?</h3>
-                    <p>You do. Your name is recorded on the standard county title deed as the legal owner of the structure. You retain one hundred percent of the home equity and structural appreciation.</p>
+                    <p>You do. You are the legal owner of the home. You retain one hundred percent of the home equity and structural appreciation.</p>
                 </div>
                 <div class="faq-item">
                     <h3>Can I buy the land later?</h3>
@@ -533,6 +538,7 @@
             const tradLoan = price * 0.97;
             const tradMonthly = Math.round(price * 0.0068);
 
+            // Jubilee logic: down payment and loan apply to structure only, plus land agreement approximation
             const jubDown = structurePrice * 0.03;
             const jubLoan = structurePrice * 0.97;
             const jubMonthly = Math.round((structurePrice * 0.0068) + (price * 0.45 * 0.004));
