@@ -1,557 +1,135 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jubilee | Separate the House from the Land</title>
-    <style>
-        :root {
-            --navy-900: #0f172a;
-            --brand-blue: #0284c7;
-            --brand-light: #e0f2fe;
-            --bg-canvas: #f8fafc;
-            --text-main: #1e293b;
-            --text-muted: #475569;
-            --border-color: #e2e8f0;
-            --white: #ffffff;
-        }
+export default function MarketResearchReviewSite() {
+  return (
+    <main className="min-h-screen bg-white text-slate-900">
+      {/* Module 1: Hero Variants */}
+      <section className="py-16 px-4 max-w-4xl mx-auto text-center">
+        <span className="text-xs font-semibold uppercase tracking-widest text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">
+          Module 1: Hero Variants
+        </span>
+        <h1 className="text-4xl font-bold tracking-tight text-slate-900 mt-4 mb-4">
+          Buy your home with under 2% down.
+        </h1>
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+          Stop waiting years to save for an impossible down payment. By separating the house from the land, you buy the home you need today with under 2% down while keeping your finances flexible.
+        </p>
+        <button className="bg-slate-900 text-white font-medium px-6 py-3 rounded-xl hover:bg-slate-800 transition">
+          Check Your Buying Power
+        </button>
+      </section>
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: var(--text-main);
-            line-height: 1.6;
-            background: var(--bg-canvas);
-        }
-
-        header {
-            background: var(--white);
-            border-bottom: 1px solid var(--border-color);
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 20px;
-            color: var(--navy-900);
-            letter-spacing: -0.02em;
-        }
-
-        .hero {
-            padding: 80px 20px 60px 20px;
-            text-align: center;
-            background: var(--white);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            font-size: 44px;
-            color: var(--navy-900);
-            line-height: 1.2;
-            margin-bottom: 20px;
-            letter-spacing: -0.02em;
-        }
-
-        h2 {
-            font-size: 32px;
-            color: var(--navy-900);
-            margin-bottom: 16px;
-            letter-spacing: -0.01em;
-        }
-
-        p {
-            font-size: 18px;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--brand-blue);
-            color: var(--white);
-            padding: 14px 28px;
-            border-radius: 6px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background 0.2s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background: #0369a1;
-        }
-
-        .micro-copy {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin-top: 12px;
-        }
-
-        .social-proof-bar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 24px;
-            margin-top: 30px;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--navy-900);
-        }
-
-        .badge {
-            background: var(--brand-light);
-            color: var(--brand-blue);
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .section {
-            padding: 80px 20px;
-        }
-
-        .section-alt {
-            background: var(--white);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .card {
-            background: var(--bg-canvas);
-            border: 1px solid var(--border-color);
-            padding: 40px;
-            border-radius: 8px;
-            text-align: left;
-        }
-
-        .card h3 {
-            color: var(--navy-900);
-            font-size: 22px;
-            margin-bottom: 12px;
-        }
-
-        /* Calculator and Chart Styles */
-        .calc-wrapper {
-            background: var(--white);
-            border: 1px solid var(--border-color);
-            padding: 40px;
-            border-radius: 12px;
-            margin-top: 40px;
-            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
-            text-align: left;
-        }
-
-        .input-group {
-            margin-bottom: 24px;
-        }
-
-        .input-group label {
-            display: block;
-            font-weight: 600;
-            color: var(--navy-900);
-            margin-bottom: 8px;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 12px;
-            font-size: 18px;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 30px;
-        }
-
-        .comparison-table th, .comparison-table td {
-            padding: 16px;
-            border-bottom: 1px solid var(--border-color);
-            text-align: left;
-        }
-
-        .comparison-table th {
-            color: var(--navy-900);
-            background: var(--bg-canvas);
-        }
-
-        .highlight-col {
-            background: var(--brand-light);
-            font-weight: 600;
-            color: var(--navy-900);
-        }
-
-        /* Framework Grid */
-        .framework-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 24px;
-            margin-top: 40px;
-            text-align: left;
-        }
-
-        .framework-card {
-            background: var(--white);
-            border: 1px solid var(--border-color);
-            padding: 30px;
-            border-radius: 8px;
-        }
-
-        .framework-card h3 {
-            color: var(--navy-900);
-            font-size: 18px;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .framework-card h3 span {
-            color: var(--brand-blue);
-        }
-
-        /* Trust Pillars Grid */
-        .trust-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 24px;
-            margin-top: 40px;
-            text-align: left;
-        }
-
-        .trust-card {
-            background: var(--bg-canvas);
-            border: 1px solid var(--border-color);
-            padding: 30px;
-            border-radius: 8px;
-        }
-
-        .trust-card h3 {
-            color: var(--navy-900);
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        /* Customer Story Card */
-        .story-card {
-            background: var(--white);
-            border-left: 4px solid var(--brand-blue);
-            border-top: 1px solid var(--border-color);
-            border-right: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 40px;
-            border-radius: 0 8px 8px 0;
-            margin-top: 40px;
-            text-align: left;
-        }
-
-        .story-quote {
-            font-style: italic;
-            font-size: 20px;
-            color: var(--navy-900);
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-
-        .story-author {
-            font-weight: 600;
-            color: var(--text-main);
-        }
-
-        .story-details {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        /* FAQ Grid */
-        .faq-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 40px;
-            margin-top: 40px;
-            text-align: left;
-        }
-
-        .faq-item h3 {
-            color: var(--navy-900);
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        .disclosure {
-            font-size: 12px;
-            color: var(--text-muted);
-            background: var(--bg-canvas);
-            padding: 20px;
-            border-radius: 6px;
-            margin-top: 30px;
-            border: 1px solid var(--border-color);
-            text-align: left;
-        }
-
-        footer {
-            background: var(--navy-900);
-            color: var(--white);
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 14px;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="logo">Jubilee</div>
-    </header>
-
-    <!-- Section 1: Hero and Social Proof -->
-    <section class="hero">
-        <div class="container">
-            <h1>Own the home. Leave the dirt to us.</h1>
-            <p>The standard way to buy a home with less cash. By separating the house from the land, Jubilee's homeownership model allows you to fully own your home while requiring up to 75% less upfront cash.</p>
-            <a href="#calculator" class="btn">Check Your Buying Power</a>
-            <div class="micro-copy">Soft credit check only. Zero impact on your credit score. Takes two minutes.</div>
-            
-            <div class="social-proof-bar">
-                <div><span class="badge">Trustpilot</span> 4.8 / 5.0 Rating</div>
-                <div>•</div>
-                <div><span class="badge">BBB Accredited</span> A+ Rating</div>
-                <div>•</div>
-                <div style="display: flex; align-items: center; gap: 6px;">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--navy-900)" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L2 12h3v8h14v-8h3L12 2zm0 2.8l5 5V18H7v-8.2l5-5zm-3 7h6v2H9v-2zm0 3h6v2H9v-2z"/>
-                    </svg>
-                    Equal Housing Lender
-                </div>
-            </div>
+      {/* Module 2: Persona Selector */}
+      <section className="py-16 px-4 max-w-5xl mx-auto border-t border-slate-100">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-slate-900 mb-3">Choose how Jubilee fits your goals.</h2>
+          <p className="text-slate-600">Select the path that matches your financial approach.</p>
         </div>
-    </section>
-
-    <!-- Section 2: Split Persona Selector -->
-    <section class="section">
-        <div class="container">
-            <h2>Choose how Jubilee fits your goals.</h2>
-            <p>Whether you are a first-time buyer trying to beat high down payments or a portfolio manager protecting liquidity, our model adapts to you.</p>
-            
-            <div class="grid-2">
-                <div class="card">
-                    <h3>Stop saving for an impossible down payment.</h3>
-                    <p>You can comfortably afford the monthly payments, but saving $60,000 in cash for a traditional down payment keeps you stuck renting. Own a single-family home with as little as three percent down.</p>
-                    <a href="#calculator" class="btn">Calculate My Savings</a>
-                </div>
-                <div class="card">
-                    <h3>Keep your portfolio compounding.</h3>
-                    <p>Why sink hundreds of thousands of liquid cash into low-yield dirt? Let Jubilee cover the land so you capture structural upside while keeping your dry powder free for investments or business growth.</p>
-                    <a href="#calculator" class="btn">Model My Liquidity</a>
-                </div>
-            </div>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="border border-slate-200 p-8 rounded-2xl shadow-sm bg-slate-50/50">
+            <h3 className="text-xl font-bold text-slate-900 mb-2">You’ve probably already saved enough for a down payment.</h3>
+            <p className="text-slate-600 mb-6 text-sm leading-relaxed">
+              Traditional 20% down payment rules make homeownership feel out of reach, but your current savings give you more buying power than you realize. Own a single-family home with down payments under 2%.
+            </p>
+            <button className="text-emerald-700 font-semibold hover:underline">Calculate My Buying Power →</button>
+          </div>
+          <div className="border border-slate-200 p-8 rounded-2xl shadow-sm bg-slate-50/50">
+            <h3 className="text-xl font-bold text-slate-900 mb-2">Keep your cash flexible while building equity.</h3>
+            <p className="text-slate-600 mb-6 text-sm leading-relaxed">
+              Sinking hundreds of thousands of dollars into a conventional home purchase ties up active liquid capital. Keep cash on hand to deploy in higher-yielding investments.
+            </p>
+            <button className="text-emerald-700 font-semibold hover:underline">Compare Your Upfront Cash Costs →</button>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Section 3: Interactive Calculator and Comparison Chart -->
-    <section id="calculator" class="section section-alt">
-        <div class="container">
-            <h2 style="text-align: center;">Interactive Buying Power Calculator</h2>
-            <p style="text-align: center;">Adjust the home price below to see how standard financing compares to Jubilee's model.</p>
-
-            <div class="calc-wrapper">
-                <div class="input-group">
-                    <label for="homePrice">Target Home Price ($):</label>
-                    <input type="number" id="homePrice" value="900000" step="25000" oninput="updateMath()">
-                </div>
-
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Metric</th>
-                            <th>Traditional Mortgage</th>
-                            <th class="highlight-col">Jubilee's Model</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Down Payment Required (Three Percent)</td>
-                            <td id="tradDown">$27,000</td>
-                            <td class="highlight-col" id="jubDown">$15,000</td>
-                        </tr>
-                        <tr>
-                            <td>Principal Financed</td>
-                            <td id="tradLoan">$873,000</td>
-                            <td class="highlight-col" id="jubLoan">$500,000</td>
-                        </tr>
-                        <tr>
-                            <td>Estimated Monthly Payment</td>
-                            <td id="tradMonthly">$6,100</td>
-                            <td class="highlight-col" id="jubMonthly">$4,200</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="disclosure">
-                    *Jubilee's homeownership model means you buy and own the home; Jubilee owns the land under it and provides a land agreement for up to 99 years. Your monthly housing cost includes both your mortgage payment and your land agreement payment—the figures above include both. You keep one hundred percent of the equity in the home itself. Appreciation on the land is shared under the terms of your agreement, and you have the option to buy the land at any time. Example figures only, your terms depend on the home, your credit and your market.
-                </div>
-            </div>
+      {/* Module 3: Comparison Chart */}
+      <section className="py-16 px-4 max-w-4xl mx-auto border-t border-slate-100">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 mb-3">
+            See How the Numbers Compare
+          </h2>
+          <p className="text-lg text-slate-600">
+            A transparent side-by-side look at traditional financing versus our land-funding approach on a $900,000 home purchase.
+          </p>
         </div>
-    </section>
 
-    <!-- Section 4: Who, What, When, Where, How, and Why -->
-    <section class="section">
-        <div class="container">
-            <h2>How Jubilee Works: The Complete Breakdown</h2>
-            <p>Everything you need to know about our homeownership model, structured in plain English.</p>
-
-            <div class="framework-grid">
-                <div class="framework-card">
-                    <h3><span>01</span> Who</h3>
-                    <p>Built for aspiring homeowners and capital-conscious buyers who want single-family real estate without draining their liquid savings.</p>
-                </div>
-                <div class="framework-card">
-                    <h3><span>02</span> What</h3>
-                    <p>A homeownership model that separates the house structure from the land underneath it, dramatically lowering upfront cash requirements.</p>
-                </div>
-                <div class="framework-card">
-                    <h3><span>03</span> When</h3>
-                    <p>Applied at closing. You secure your mortgage for the house while Jubilee simultaneously acquires and funds the underlying land.</p>
-                </div>
-                <div class="framework-card">
-                    <h3><span>04</span> Where</h3>
-                    <p>Available on standard single-family residential properties and neighborhoods across your target market.</p>
-                </div>
-                <div class="framework-card">
-                    <h3><span>05</span> How</h3>
-                    <p>You are the legal owner of the home. You pay a predictable monthly land agreement payment alongside your standard mortgage.</p>
-                </div>
-                <div class="framework-card">
-                    <h3><span>06</span> Why</h3>
-                    <p>To eliminate the inflated cost of dirt, giving families affordable access to great school districts and investors freedom to keep cash liquid.</p>
-                </div>
-            </div>
+        <div className="overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-slate-50 border-b border-slate-200 text-slate-700">
+                <th className="py-4 px-6 font-semibold">Metric</th>
+                <th className="py-4 px-6 font-semibold">Traditional Mortgage</th>
+                <th className="py-4 px-6 font-semibold text-emerald-700">The Jubilee Approach</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 bg-white text-slate-800">
+              <tr>
+                <td className="py-4 px-6 font-medium text-slate-900">Down Payment Required (2%)</td>
+                <td className="py-4 px-6 text-slate-600">$27,000</td>
+                <td className="py-4 px-6 font-semibold text-emerald-700">$15,000</td>
+              </tr>
+              <tr>
+                <td className="py-4 px-6 font-medium text-slate-900">Principal Financed</td>
+                <td className="py-4 px-6 text-slate-600">$873,000</td>
+                <td className="py-4 px-6 font-semibold text-emerald-700">$500,000</td>
+              </tr>
+              <tr>
+                <td className="py-4 px-6 font-medium text-slate-900">Estimated Monthly Payment</td>
+                <td className="py-4 px-6 text-slate-600">$6,100 / mo</td>
+                <td className="py-4 px-6 font-semibold text-emerald-700">$4,200 / mo</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-    </section>
 
-    <!-- Section 5: Trust and Normalcy -->
-    <section class="section section-alt">
-        <div class="container">
-            <h2>The standard way to buy. Completely normal real estate.</h2>
-            <p>Families often ask if separating house and land is legal or complicated. The truth is, it feels just like a traditional home purchase because it is built on standard property principles.</p>
-
-            <div class="trust-grid">
-                <div class="trust-card">
-                    <h3>Full Homeownership</h3>
-                    <p>You are the sole, legal owner of the home, exactly the same as a traditional purchase.</p>
-                </div>
-                <div class="trust-card">
-                    <h3>Traditional Lenders</h3>
-                    <p>Your mortgage for the house comes from trusted, mainstream banks and conventional lenders.</p>
-                </div>
-                <div class="trust-card">
-                    <h3>Your Own Agent</h3>
-                    <p>Work with any licensed real estate agent you choose. They guide you and earn their full commission.</p>
-                </div>
-            </div>
+        <div className="mt-6 text-xs text-slate-500 leading-relaxed bg-slate-50 p-4 rounded-lg border border-slate-200/60">
+          <p>
+            <strong>Legal Disclosure:</strong> Under our land-funding approach, you buy and own the home; Jubilee owns the land under it and provides a land agreement for up to 99 years. Your monthly housing cost includes both your mortgage payment and your land agreement payment—the figures above include both. You keep one hundred percent of the equity in the home itself. Appreciation on the land is shared under the terms of your agreement, and you have the option to buy the land at any time. Example figures only, your terms depend on the home, your credit and your market.
+          </p>
         </div>
-    </section>
+      </section>
 
-    <!-- Section 6: Customer Success Story -->
-    <section class="section">
-        <div class="container">
-            <h2>Real Buyer Success Story</h2>
-            <p>See how families are stepping into homes sooner with Jubilee.</p>
+      {/* Module 6: Customer Success Story */}
+      <section className="py-16 px-4 max-w-3xl mx-auto border-t border-slate-100 text-center">
+        <h2 className="text-3xl font-bold text-slate-900 mb-2">Real Buyer Success Story</h2>
+        <p className="text-slate-600 mb-8">See how families are stepping into homes sooner.</p>
+        <blockquote className="text-lg italic text-slate-700 bg-slate-50 p-8 rounded-2xl border border-slate-200">
+          "High down payment requirements made buying in a top school district feel impossible under standard financing. By funding the land separately, required upfront cash dropped by over $35,000. Keys were in hand within 30 days without tapping into retirement savings."
+          <footer className="mt-4 not-italic font-semibold text-slate-900">— The Miller Family (Homeowners in Northern California)</footer>
+        </blockquote>
+      </section>
 
-            <div class="story-card">
-                <div class="story-quote">
-                    "We were completely priced out of our target school district by traditional down payment requirements. By letting Jubilee cover the land, our required cash dropped by over $35,000. We got our keys in 30 days without touching our retirement accounts."
-                </div>
-                <div class="story-author">The Miller Family</div>
-                <div class="story-details">Homeowners in Northern California • Purchased via Jubilee Model</div>
-            </div>
+      {/* Module 7: Mechanism FAQ */}
+      <section className="py-16 px-4 max-w-4xl mx-auto border-t border-slate-100">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-slate-900 mb-2">Common questions about our land-funding approach</h2>
+          <p className="text-slate-600">Straightforward answers about how buyer ownership rights and equity stay protected.</p>
         </div>
-    </section>
-
-    <!-- Section 7: Mechanism FAQ -->
-    <section class="section section-alt">
-        <div class="container">
-            <h2>Common questions about our homeownership model</h2>
-            <p>Clear, straightforward answers about how we protect your ownership rights.</p>
-
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3>Who owns the home?</h3>
-                    <p>You do. You are the legal owner of the home. You retain one hundred percent of the home equity and structural appreciation.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Can I buy the land later?</h3>
-                    <p>Yes. You can choose to buy the land from Jubilee at any time on your own timeline with zero buyout penalties, using objective, public housing appreciation data for transparent pricing.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What happens when I want to sell?</h3>
-                    <p>You sell your home on the open market just like any standard property. The new buyer can assume the land agreement or buy the house and land together. You keep all house profits.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>How long does the closing process take?</h3>
-                    <p>It operates on a standard 30-day escrow timeline, working seamlessly with title companies and traditional lenders.</p>
-                </div>
-            </div>
+        <div className="space-y-6">
+          <div className="border border-slate-200 p-6 rounded-xl">
+            <h3 className="font-semibold text-slate-900 mb-2">Who owns the home?</h3>
+            <p className="text-slate-600 text-sm">The buyer holds sole legal title to the home structure, retaining 100% of home equity and structural appreciation.</p>
+          </div>
+          <div className="border border-slate-200 p-6 rounded-xl">
+            <h3 className="font-semibold text-slate-900 mb-2">Can the land be purchased later?</h3>
+            <p className="text-slate-600 text-sm">Yes. Homeowners can purchase the land at any time without buyout penalties, using transparent, public market data to determine pricing.</p>
+          </div>
+          <div className="border border-slate-200 p-6 rounded-xl">
+            <h3 className="font-semibold text-slate-900 mb-2">What happens when I want to sell?</h3>
+            <p className="text-slate-600 text-sm">You sell your home on the open market just like any standard property. The new buyer can assume the land agreement or buy the house and land together. You keep all house profits.</p>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Section 8: Adviser Access -->
-    <section class="section">
-        <div class="container" style="text-align: center;">
-            <h2>Have questions about how the land agreement works?</h2>
-            <p>Buying a home is the biggest financial decision most people make. It is completely normal to need more time to research. Our licensed Jubilee home advisers are available to help you model your exact numbers in plain English.</p>
-            <a href="#" class="btn">Speak With An Adviser</a>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Jubilee Homes Inc. All rights reserved.</p>
-    </footer>
-
-    <script>
-        function updateMath() {
-            const price = parseFloat(document.getElementById('homePrice').value) || 0;
-            const structurePrice = price * 0.55;
-            
-            const tradDown = price * 0.03;
-            const tradLoan = price * 0.97;
-            const tradMonthly = Math.round(price * 0.0068);
-
-            // Jubilee logic: down payment and loan apply to structure only, plus land agreement approximation
-            const jubDown = structurePrice * 0.03;
-            const jubLoan = structurePrice * 0.97;
-            const jubMonthly = Math.round((structurePrice * 0.0068) + (price * 0.45 * 0.004));
-
-            document.getElementById('tradDown').innerText = '$' + Math.round(tradDown).toLocaleString();
-            document.getElementById('jubDown').innerText = '$' + Math.round(jubDown).toLocaleString();
-            
-            document.getElementById('tradLoan').innerText = '$' + Math.round(tradLoan).toLocaleString();
-            document.getElementById('jubLoan').innerText = '$' + Math.round(jubLoan).toLocaleString();
-            
-            document.getElementById('tradMonthly').innerText = '$' + tradMonthly.toLocaleString() + '/mo';
-            document.getElementById('jubMonthly').innerText = '$' + jubMonthly.toLocaleString() + '/mo';
-        }
-    </script>
-</body>
-</html>
+      {/* Module 8: Adviser Access */}
+      <section className="py-16 px-4 max-w-3xl mx-auto border-t border-slate-100 text-center">
+        <h2 className="text-3xl font-bold text-slate-900 mb-3">Have questions about how the land agreement works?</h2>
+        <p className="text-slate-600 mb-8">
+          Buying a home represents a major financial milestone. Taking time to review details is completely normal. Licensed home advisers stand ready to help model exact numbers and explain options clearly.
+        </p>
+        <button className="bg-emerald-700 text-white font-medium px-8 py-3 rounded-xl hover:bg-emerald-800 transition">
+          Speak With An Adviser
+        </button>
+      </section>
+    </main>
+  );
+}
