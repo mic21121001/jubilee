@@ -1,135 +1,217 @@
-export default function MarketResearchReviewSite() {
-  return (
-    <main className="min-h-screen bg-white text-slate-900">
-      {/* Module 1: Hero Variants */}
-      <section className="py-16 px-4 max-w-4xl mx-auto text-center">
-        <span className="text-xs font-semibold uppercase tracking-widest text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">
-          Module 1: Hero Variants
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jubilee Market Research Review</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-white text-slate-900 font-sans">
+
+    <!-- Variant Switcher for Testing -->
+    <div class="bg-slate-900 text-white py-2 px-4 text-center text-xs flex justify-center items-center gap-4">
+        <span class="text-slate-400 font-semibold uppercase tracking-wider">Hero Test Variant:</span>
+        <button onclick="switchHero('1A')" id="btn-1A" class="px-3 py-1 rounded transition bg-emerald-600 text-white">1A (Down Payment)</button>
+        <button onclick="switchHero('1B')" id="btn-1B" class="px-3 py-1 rounded transition bg-slate-800 text-slate-300 hover:bg-slate-700">1B (School District)</button>
+        <button onclick="switchHero('1C')" id="btn-1C" class="px-3 py-1 rounded transition bg-slate-800 text-slate-300 hover:bg-slate-700">1C (Capital Liquidity)</button>
+    </div>
+
+    <!-- Module 1: Hero Section -->
+    <section class="py-20 px-4 max-w-4xl mx-auto text-center">
+        <span id="hero-badge" class="text-xs font-semibold uppercase tracking-widest text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">
+            Module 1: Hero Section (1A)
         </span>
-        <h1 className="text-4xl font-bold tracking-tight text-slate-900 mt-4 mb-4">
-          Buy your home with under 2% down.
+        
+        <h1 id="hero-title" class="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mt-4 mb-4">
+            Buy your home with under 2% down.
         </h1>
-        <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
-          Stop waiting years to save for an impossible down payment. By separating the house from the land, you buy the home you need today with under 2% down while keeping your finances flexible.
+        <p id="hero-desc" class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+            Stop waiting years to save for an impossible down payment. By separating the house from the land, you buy the home you need today with under 2% down while keeping your finances flexible.
         </p>
-        <button className="bg-slate-900 text-white font-medium px-6 py-3 rounded-xl hover:bg-slate-800 transition">
-          Check Your Buying Power
+
+        <button class="bg-slate-900 text-white font-medium px-8 py-4 rounded-xl hover:bg-slate-800 transition shadow-sm">
+            Check Your Buying Power
         </button>
-      </section>
-
-      {/* Module 2: Persona Selector */}
-      <section className="py-16 px-4 max-w-5xl mx-auto border-t border-slate-100">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-slate-900 mb-3">Choose how Jubilee fits your goals.</h2>
-          <p className="text-slate-600">Select the path that matches your financial approach.</p>
+        <p class="text-xs text-slate-400 mt-3">Soft credit check only. Zero impact on your credit score. Takes two minutes.</p>
+        
+        <div class="mt-8 pt-6 border-t border-slate-100 flex justify-center items-center gap-6 text-xs text-slate-500 font-medium flex-wrap">
+            <span>★ Trustpilot (4.8 / 5.0 Rating)</span>
+            <span>•</span>
+            <span>BBB Accredited (A+ Rating)</span>
+            <span>•</span>
+            <span>Equal Housing Lender</span>
         </div>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="border border-slate-200 p-8 rounded-2xl shadow-sm bg-slate-50/50">
-            <h3 className="text-xl font-bold text-slate-900 mb-2">You’ve probably already saved enough for a down payment.</h3>
-            <p className="text-slate-600 mb-6 text-sm leading-relaxed">
-              Traditional 20% down payment rules make homeownership feel out of reach, but your current savings give you more buying power than you realize. Own a single-family home with down payments under 2%.
-            </p>
-            <button className="text-emerald-700 font-semibold hover:underline">Calculate My Buying Power →</button>
-          </div>
-          <div className="border border-slate-200 p-8 rounded-2xl shadow-sm bg-slate-50/50">
-            <h3 className="text-xl font-bold text-slate-900 mb-2">Keep your cash flexible while building equity.</h3>
-            <p className="text-slate-600 mb-6 text-sm leading-relaxed">
-              Sinking hundreds of thousands of dollars into a conventional home purchase ties up active liquid capital. Keep cash on hand to deploy in higher-yielding investments.
-            </p>
-            <button className="text-emerald-700 font-semibold hover:underline">Compare Your Upfront Cash Costs →</button>
-          </div>
-        </div>
-      </section>
+    </section>
 
-      {/* Module 3: Comparison Chart */}
-      <section className="py-16 px-4 max-w-4xl mx-auto border-t border-slate-100">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 mb-3">
-            See How the Numbers Compare
-          </h2>
-          <p className="text-lg text-slate-600">
-            A transparent side-by-side look at traditional financing versus our land-funding approach on a $900,000 home purchase.
-          </p>
+    <!-- Module 2: Persona Selector & Interactive Typing Tool -->
+    <section class="py-16 px-4 max-w-5xl mx-auto border-t border-slate-100">
+        <div class="text-center mb-12">
+            <span class="text-xs font-semibold uppercase tracking-widest text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">Module 2</span>
+            <h2 class="text-3xl font-bold text-slate-900 mt-3 mb-3">Choose how Jubilee fits your goals.</h2>
+            <p class="text-slate-600 max-w-xl mx-auto">Whether overcoming high local down payments or protecting liquid capital for investments, Jubilee can fit your specific financial goals.</p>
         </div>
 
-        <div className="overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
-          <table className="w-full text-left border-collapse">
-            <thead>
-              <tr className="bg-slate-50 border-b border-slate-200 text-slate-700">
-                <th className="py-4 px-6 font-semibold">Metric</th>
-                <th className="py-4 px-6 font-semibold">Traditional Mortgage</th>
-                <th className="py-4 px-6 font-semibold text-emerald-700">The Jubilee Approach</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-200 bg-white text-slate-800">
-              <tr>
-                <td className="py-4 px-6 font-medium text-slate-900">Down Payment Required (2%)</td>
-                <td className="py-4 px-6 text-slate-600">$27,000</td>
-                <td className="py-4 px-6 font-semibold text-emerald-700">$15,000</td>
-              </tr>
-              <tr>
-                <td className="py-4 px-6 font-medium text-slate-900">Principal Financed</td>
-                <td className="py-4 px-6 text-slate-600">$873,000</td>
-                <td className="py-4 px-6 font-semibold text-emerald-700">$500,000</td>
-              </tr>
-              <tr>
-                <td className="py-4 px-6 font-medium text-slate-900">Estimated Monthly Payment</td>
-                <td className="py-4 px-6 text-slate-600">$6,100 / mo</td>
-                <td className="py-4 px-6 font-semibold text-emerald-700">$4,200 / mo</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-10 max-w-3xl mx-auto">
+            <h3 class="text-sm font-bold uppercase tracking-wide text-slate-700 mb-4">Interactive Typing Tool (5 Quick Steps)</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-slate-600">
+                <div class="bg-white p-3 rounded-lg border border-slate-200">1. Target Location (High-Cost Metro vs. Tier-2)</div>
+                <div class="bg-white p-3 rounded-lg border border-slate-200">2. Property Type (Single-Family vs. Condo)</div>
+                <div class="bg-white p-3 rounded-lg border border-slate-200">3. Financial Goal (Cash Down vs. Liquid Capital)</div>
+                <div class="bg-white p-3 rounded-lg border border-slate-200">4. Current Rent vs. Expected Mortgage Gap</div>
+                <div class="bg-white p-3 rounded-lg border border-slate-200 sm:col-span-2">5. Timeline to Purchase (3-6 Months vs. Actively Looking)</div>
+            </div>
         </div>
 
-        <div className="mt-6 text-xs text-slate-500 leading-relaxed bg-slate-50 p-4 rounded-lg border border-slate-200/60">
-          <p>
-            <strong>Legal Disclosure:</strong> Under our land-funding approach, you buy and own the home; Jubilee owns the land under it and provides a land agreement for up to 99 years. Your monthly housing cost includes both your mortgage payment and your land agreement payment—the figures above include both. You keep one hundred percent of the equity in the home itself. Appreciation on the land is shared under the terms of your agreement, and you have the option to buy the land at any time. Example figures only, your terms depend on the home, your credit and your market.
-          </p>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="border border-slate-200 p-8 rounded-2xl shadow-sm bg-white hover:border-emerald-500 transition">
+                <h3 class="text-xl font-bold text-slate-900 mb-2">You’ve probably already saved enough for a down payment.</h3>
+                <p class="text-slate-600 mb-6 text-sm leading-relaxed">Traditional 20% down payment rules make homeownership feel out of reach, but your current savings give you more buying power than you realize. Own a single-family home with down payments under 2%.</p>
+                <button class="text-emerald-700 font-semibold text-sm hover:underline flex items-center gap-1">Calculate My Buying Power →</button>
+            </div>
+            <div class="border border-slate-200 p-8 rounded-2xl shadow-sm bg-white hover:border-emerald-500 transition">
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Keep your cash flexible while building equity.</h3>
+                <p class="text-slate-600 mb-6 text-sm leading-relaxed">Sinking hundreds of thousands of dollars into a conventional home purchase ties up active liquid capital. By lowering your down payment and monthly payment savings, you keep cash on hand to deploy in higher-yielding investments.</p>
+                <button class="text-emerald-700 font-semibold text-sm hover:underline flex items-center gap-1">Compare Your Upfront Cash Costs →</button>
+            </div>
         </div>
-      </section>
+    </section>
 
-      {/* Module 6: Customer Success Story */}
-      <section className="py-16 px-4 max-w-3xl mx-auto border-t border-slate-100 text-center">
-        <h2 className="text-3xl font-bold text-slate-900 mb-2">Real Buyer Success Story</h2>
-        <p className="text-slate-600 mb-8">See how families are stepping into homes sooner.</p>
-        <blockquote className="text-lg italic text-slate-700 bg-slate-50 p-8 rounded-2xl border border-slate-200">
-          "High down payment requirements made buying in a top school district feel impossible under standard financing. By funding the land separately, required upfront cash dropped by over $35,000. Keys were in hand within 30 days without tapping into retirement savings."
-          <footer className="mt-4 not-italic font-semibold text-slate-900">— The Miller Family (Homeowners in Northern California)</footer>
+    <!-- Module 3: Comparison Chart -->
+    <section class="py-16 px-4 max-w-4xl mx-auto border-t border-slate-100">
+        <div class="text-center mb-12">
+            <span class="text-xs font-semibold uppercase tracking-widest text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">Module 3</span>
+            <h2 class="text-3xl font-bold tracking-tight text-slate-900 mt-3 mb-3">Traditional Financing vs. This Approach</h2>
+            <p class="text-lg text-slate-600">See how standard mortgage financing compares to our approach for a target home price of $900,000.</p>
+        </div>
+
+        <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-slate-50 border-b border-slate-200 text-slate-700 text-sm">
+                        <th class="py-4 px-6 font-semibold">Metric</th>
+                        <th class="py-4 px-6 font-semibold">Traditional Mortgage</th>
+                        <th class="py-4 px-6 font-semibold text-emerald-700">This Approach</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 bg-white text-slate-800 text-sm">
+                    <tr>
+                        <td class="py-4 px-6 font-medium text-slate-900">Down Payment Required (2%)</td>
+                        <td class="py-4 px-6 text-slate-600">$27,000</td>
+                        <td class="py-4 px-6 font-semibold text-emerald-700">$15,000</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 px-6 font-medium text-slate-900">Principal Financed</td>
+                        <td class="py-4 px-6 text-slate-600">$873,000</td>
+                        <td class="py-4 px-6 font-semibold text-emerald-700">$500,000</td>
+                    </tr>
+                    <tr>
+                        <td class="py-4 px-6 font-medium text-slate-900">Estimated Monthly Payment</td>
+                        <td class="py-4 px-6 text-slate-600">$6,100 / mo</td>
+                        <td class="py-4 px-6 font-semibold text-emerald-700">$4,200 / mo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-6 text-xs text-slate-500 leading-relaxed bg-slate-50 p-4 rounded-lg border border-slate-200/60">
+            <p><strong>Mandatory Legal Disclosure:</strong> Buyers purchase and own the home structure; the land is held separately under a land agreement for up to 99 years. Total monthly housing payments include both the mortgage payment for the home and the land agreement payment—the figures above account for both components. <strong>Homeowners retain 100% of home equity and structural appreciation</strong>. Land appreciation is shared according to agreement terms, and options to buy the land remain available at any time. Example figures only; final terms depend on property selection, buyer credit, and market factors.</p>
+        </div>
+    </section>
+
+    <!-- Module 4: How It Works -->
+    <section class="py-16 px-4 max-w-4xl mx-auto border-t border-slate-100">
+        <div class="text-center mb-12">
+            <span class="text-xs font-semibold uppercase tracking-widest text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">Module 4</span>
+            <h2 class="text-3xl font-bold text-slate-900 mt-3 mb-2">How It Works: The Complete Breakdown</h2>
+            <p class="text-slate-600">Everything to know about the land-funding approach, structured clearly in plain English.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-6">
+            <div class="border border-slate-200 p-6 rounded-xl bg-slate-50/50"><span class="text-xs font-bold text-emerald-700">01 WHO</span><h3 class="font-semibold text-slate-900 mt-1 mb-1">Target Homebuyers</h3><p class="text-slate-600 text-sm">Built for aspiring homeowners and cash-conscious buyers who want single-family real estate without draining their liquid savings.</p></div>
+            <div class="border border-slate-200 p-6 rounded-xl bg-slate-50/50"><span class="text-xs font-bold text-emerald-700">02 WHAT</span><h3 class="font-semibold text-slate-900 mt-1 mb-1">Structure vs. Land</h3><p class="text-slate-600 text-sm">An approach that separates the house structure from the land underneath it, dramatically lowering upfront cash requirements.</p></div>
+            <div class="border border-slate-200 p-6 rounded-xl bg-slate-50/50"><span class="text-xs font-bold text-emerald-700">03 WHEN</span><h3 class="font-semibold text-slate-900 mt-1 mb-1">At Closing</h3><p class="text-slate-600 text-sm">Secure a mortgage for the house while the underlying land is funded simultaneously.</p></div>
+            <div class="border border-slate-200 p-6 rounded-xl bg-slate-50/50"><span class="text-xs font-bold text-emerald-700">04 WHERE</span><h3 class="font-semibold text-slate-900 mt-1 mb-1">Eligible Locations</h3><p class="text-slate-600 text-sm">Available on standard single-family residential properties and neighborhoods across the area you want to live in.</p></div>
+            <div class="border border-slate-200 p-6 rounded-xl bg-slate-50/50"><span class="text-xs font-bold text-emerald-700">05 HOW</span><h3 class="font-semibold text-slate-900 mt-1 mb-1">Legal Title & Payments</h3><p class="text-slate-600 text-sm">Homeowners hold legal title to the home structure, paying a predictable monthly land agreement fee alongside standard mortgage payments.</p></div>
+            <div class="border border-slate-200 p-6 rounded-xl bg-slate-50/50"><span class="text-xs font-bold text-emerald-700">06 WHY</span><h3 class="font-semibold text-slate-900 mt-1 mb-1">Affordability & Liquidity</h3><p class="text-slate-600 text-sm">To eliminate the inflated cost of land, giving families affordable access to great school districts and buyers freedom to keep cash liquid.</p></div>
+        </div>
+    </section>
+
+    <!-- Module 5: Trust & Normalcy Pillars -->
+    <section class="py-16 px-4 max-w-4xl mx-auto border-t border-slate-100">
+        <div class="text-center mb-12">
+            <span class="text-xs font-semibold uppercase tracking-widest text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">Module 5</span>
+            <h2 class="text-3xl font-bold text-slate-900 mt-3 mb-2">Standard home purchase financing. Completely normal real estate.</h2>
+            <p class="text-slate-600 max-w-2xl mx-auto">Families often ask if separating house and land is legal or complicated. The truth is, it feels just like a traditional home purchase because you work with your own real estate agent and traditional loan officer.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="border border-slate-200 p-6 rounded-xl"><h3 class="font-bold text-slate-900 mb-2">Full Homeownership</h3><p class="text-slate-600 text-sm">You are the sole, legal owner of the home, exactly the same as a traditional purchase. 5 million condo owners in the U.S already have a similar arrangement.</p></div>
+            <div class="border border-slate-200 p-6 rounded-xl"><h3 class="font-bold text-slate-900 mb-2">Traditional Lenders</h3><p class="text-slate-600 text-sm">Your mortgage for the house comes from trusted, mainstream banks and conventional lenders.</p></div>
+            <div class="border border-slate-200 p-6 rounded-xl"><h3 class="font-bold text-slate-900 mb-2">Your Own Agent</h3><p class="text-slate-600 text-sm">Work with any licensed real estate agent you choose. They guide you and earn their full commission.</p></div>
+        </div>
+    </section>
+
+    <!-- Module 6: Success Story -->
+    <section class="py-16 px-4 max-w-3xl mx-auto border-t border-slate-100 text-center">
+        <span class="text-xs font-semibold uppercase tracking-widest text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">Module 6</span>
+        <h2 class="text-3xl font-bold text-slate-900 mt-3 mb-2">Real Buyer Success Story</h2>
+        <p class="text-slate-600 mb-8">See how families are stepping into homes sooner.</p>
+        <blockquote class="text-base md:text-lg italic text-slate-700 bg-slate-50 p-8 rounded-2xl border border-slate-200 leading-relaxed">
+            "High down payment requirements made buying in a top school district feel impossible under standard financing. By funding the land separately, required upfront cash dropped by over $35,000. Keys were in hand within 30 days without tapping into retirement savings."
+            <footer class="mt-4 not-italic font-semibold text-slate-900 text-sm">— The Miller Family (Homeowners in Northern California)</footer>
         </blockquote>
-      </section>
+    </section>
 
-      {/* Module 7: Mechanism FAQ */}
-      <section className="py-16 px-4 max-w-4xl mx-auto border-t border-slate-100">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-slate-900 mb-2">Common questions about our land-funding approach</h2>
-          <p className="text-slate-600">Straightforward answers about how buyer ownership rights and equity stay protected.</p>
+    <!-- Module 7: FAQ -->
+    <section class="py-16 px-4 max-w-4xl mx-auto border-t border-slate-100">
+        <div class="text-center mb-12">
+            <span class="text-xs font-semibold uppercase tracking-widest text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">Module 7</span>
+            <h2 class="text-3xl font-bold text-slate-900 mt-3 mb-2">Common questions about our land-funding approach</h2>
+            <p class="text-slate-600">Straightforward answers about how buyer ownership rights and equity stay protected.</p>
         </div>
-        <div className="space-y-6">
-          <div className="border border-slate-200 p-6 rounded-xl">
-            <h3 className="font-semibold text-slate-900 mb-2">Who owns the home?</h3>
-            <p className="text-slate-600 text-sm">The buyer holds sole legal title to the home structure, retaining 100% of home equity and structural appreciation.</p>
-          </div>
-          <div className="border border-slate-200 p-6 rounded-xl">
-            <h3 className="font-semibold text-slate-900 mb-2">Can the land be purchased later?</h3>
-            <p className="text-slate-600 text-sm">Yes. Homeowners can purchase the land at any time without buyout penalties, using transparent, public market data to determine pricing.</p>
-          </div>
-          <div className="border border-slate-200 p-6 rounded-xl">
-            <h3 className="font-semibold text-slate-900 mb-2">What happens when I want to sell?</h3>
-            <p className="text-slate-600 text-sm">You sell your home on the open market just like any standard property. The new buyer can assume the land agreement or buy the house and land together. You keep all house profits.</p>
-          </div>
+        <div class="space-y-4">
+            <div class="border border-slate-200 p-6 rounded-xl bg-white"><h3 class="font-semibold text-slate-900 mb-1">Q: Who owns the home?</h3><p class="text-slate-600 text-sm">A: The buyer holds sole legal title to the home structure, retaining 100% of home equity and structural appreciation.</p></div>
+            <div class="border border-slate-200 p-6 rounded-xl bg-white"><h3 class="font-semibold text-slate-900 mb-1">Q: Can the land be purchased later?</h3><p class="text-slate-600 text-sm">A: Yes. Homeowners can purchase the land at any time without buyout penalties, using transparent, public market data to determine pricing.</p></div>
+            <div class="border border-slate-200 p-6 rounded-xl bg-white"><h3 class="font-semibold text-slate-900 mb-1">Q: What happens when I want to sell?</h3><p class="text-slate-600 text-sm">A: You sell your home on the open market just like any standard property. The new buyer can assume the land agreement or buy the house and land together. You keep all house profits.</p></div>
+            <div class="border border-slate-200 p-6 rounded-xl bg-white"><h3 class="font-semibold text-slate-900 mb-1">Q: How long does the closing process take?</h3><p class="text-slate-600 text-sm">A: It operates on a standard 30-day escrow timeline, working seamlessly with title companies and traditional lenders.</p></div>
         </div>
-      </section>
+    </section>
 
-      {/* Module 8: Adviser Access */}
-      <section className="py-16 px-4 max-w-3xl mx-auto border-t border-slate-100 text-center">
-        <h2 className="text-3xl font-bold text-slate-900 mb-3">Have questions about how the land agreement works?</h2>
-        <p className="text-slate-600 mb-8">
-          Buying a home represents a major financial milestone. Taking time to review details is completely normal. Licensed home advisers stand ready to help model exact numbers and explain options clearly.
-        </p>
-        <button className="bg-emerald-700 text-white font-medium px-8 py-3 rounded-xl hover:bg-emerald-800 transition">
-          Speak With An Adviser
-        </button>
-      </section>
-    </main>
-  );
-}
+    <!-- Module 8: Adviser Access -->
+    <section class="py-16 px-4 max-w-3xl mx-auto border-t border-slate-100 text-center">
+        <span class="text-xs font-semibold uppercase tracking-widest text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">Module 8</span>
+        <h2 class="text-3xl font-bold text-slate-900 mt-3 mb-3">Have questions about how the land agreement works?</h2>
+        <p class="text-slate-600 mb-8 max-w-xl mx-auto text-sm leading-relaxed">Buying a home represents a major financial milestone. Taking time to review details is completely normal. Licensed home advisers stand ready to help model exact numbers and explain options clearly.</p>
+        <button class="bg-emerald-700 text-white font-medium px-8 py-3 rounded-xl hover:bg-emerald-800 transition shadow-sm">Speak With An Adviser</button>
+    </section>
+
+    <script>
+        function switchHero(variant) {
+            const badge = document.getElementById('hero-badge');
+            const title = document.getElementById('hero-title');
+            const desc = document.getElementById('hero-desc');
+            
+            ['1A', '1B', '1C'].forEach(v => {
+                const btn = document.getElementById('btn-' + v);
+                if (v === variant) {
+                    btn.className = "px-3 py-1 rounded transition bg-emerald-600 text-white";
+                } else {
+                    btn.className = "px-3 py-1 rounded transition bg-slate-800 text-slate-300 hover:bg-slate-700";
+                }
+            });
+
+            if (variant === '1A') {
+                badge.innerText = "Module 1: Hero Section (1A)";
+                title.innerText = "Buy your home with under 2% down.";
+                desc.innerText = "Stop waiting years to save for an impossible down payment. By separating the house from the land, you buy the home you need today with under 2% down while keeping your finances flexible.";
+            } else if (variant === '1B') {
+                badge.innerText = "Module 1: Hero Section (1B)";
+                title.innerText = "Move into your dream neighborhood with under 2% down.";
+                desc.innerText = "Picture children thriving in top-tier schools and playing in a yard of their own. Buy your single-family home with under 2% down and stop waiting for the housing market to change.";
+            } else if (variant === '1C') {
+                badge.innerText = "Module 1: Hero Section (1C)";
+                title.innerText = "Keep your savings liquid and buy with under 2% down.";
+                desc.innerText = "Buy your home with under 2% down and keep your money free for investments, your business, or life.";
+            }
+        }
+    </script>
+</body>
+</html>
