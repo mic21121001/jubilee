@@ -33,6 +33,8 @@
   .sub{font-size:17px; color:#374151; max-width:720px; margin-top:14px;}
   .btn{display:inline-block; background:var(--brand); color:#fff; font-weight:700; font-size:15px; padding:13px 26px; border:none; border-radius:999px; cursor:pointer; margin-top:24px;}
   .btn:hover{background:var(--brand-dark);}
+  .mathbtn{display:inline-block; background:#fff; color:var(--brand-dark); border:1.5px solid var(--brand); font-weight:700; font-size:14.5px; padding:11px 22px; border-radius:999px; cursor:pointer; margin-top:22px;}
+  .mathbtn:hover{background:var(--band);}
   .micro{font-size:13px; color:var(--muted); margin-top:14px;}
   .badges{font-size:13px; color:#374151; margin-top:8px; font-weight:600;}
   .hero{border:1px solid var(--line); border-radius:16px; padding:40px; margin-top:8px; background:linear-gradient(180deg,#ffffff, var(--band2));}
@@ -192,10 +194,29 @@
     <tr><th>Metric</th><th>Traditional Mortgage</th><th class="jub">The Jubilee Approach</th></tr>
     <tr><td>Down Payment Required (3.5%)</td><td>$31,500</td><td class="jub">$9,135</td></tr>
     <tr><td>Principal Financed</td><td>$868,500</td><td class="jub">$251,865</td></tr>
-    <tr><td>Estimated Monthly Payment</td><td>$6,104/mo</td><td class="jub">$5,172/mo</td></tr>
+    <tr><td>Estimated Monthly Payment</td><td>$5,778/mo</td><td class="jub">$5,172/mo</td></tr>
   </table>
 
-  <div class="disclosure"><strong>Mandatory Legal Disclosure:</strong> Under the land-funding model, buyers purchase and own the home structure; Jubilee retains the land and provides a land agreement for up to 99 years. Total monthly housing payments include both the mortgage payment for the home and the land agreement payment—the figures above account for both components. Homeowners keep 100% of the equity they build in the home. Appreciation or loss in the total property value is shared between the homeowner and Jubilee based on the agreement split, and options to buy the land remain available at any time. Example figures only; final terms depend on property selection, buyer credit, and market factors.</div>
+  <button class="mathbtn" type="button" aria-expanded="false" aria-controls="mathPanel" onclick="toggleMath(this)">See the math ▾</button>
+  <div id="mathPanel" hidden>
+  <h3 style="font-size:20px; font-weight:800; margin-top:28px;">Deeper dive — the full breakdown</h3>
+  <table>
+    <tr><th>Metric</th><th>Traditional Mortgage</th><th class="jub">The Jubilee Approach</th></tr>
+    <tr><th colspan="3" style="background:#eef1f4; color:#5a6573; font-size:12px; letter-spacing:.08em;">AT PURCHASE</th></tr>
+    <tr><td>Home Price</td><td>$900,000</td><td class="jub">$900,000</td></tr>
+    <tr><td>Land</td><td>$639,000 — you buy it too</td><td class="jub">$639,000 — Jubilee buys it</td></tr>
+    <tr><td>Home Structure</td><td>$261,000</td><td class="jub">$261,000</td></tr>
+    <tr><td>Down Payment Required (3.5%)</td><td>$31,500</td><td class="jub">$9,135</td></tr>
+    <tr><td>Principal Financed</td><td>$868,500</td><td class="jub">$251,865</td></tr>
+    <tr><th colspan="3" style="background:#eef1f4; color:#5a6573; font-size:12px; letter-spacing:.08em;">EACH MONTH</th></tr>
+    <tr><td>Mortgage Principal &amp; Interest</td><td>$5,778/mo</td><td class="jub">$1,676/mo</td></tr>
+    <tr><td>Land Agreement Payment</td><td>—</td><td class="jub">$3,496/mo</td></tr>
+    <tr><td>Total Monthly Payment</td><td>$5,778/mo</td><td class="jub">$5,172/mo</td></tr>
+  </table>
+  <p class="micro">Property taxes and homeowner's insurance are not included; they are the same under either option.</p>
+  </div>
+
+  <div class="disclosure"><strong>Mandatory Legal Disclosure:</strong> Under the land-funding model, buyers purchase and own the home structure; Jubilee retains the land and provides a land agreement for up to 99 years. Total monthly housing payments include both the mortgage payment for the home and the land agreement payment—the figures above account for both components. Estimated monthly payments do not include mortgage insurance. Homeowners keep 100% of the equity they build in the home. Appreciation or loss in the total property value is shared between the homeowner and Jubilee based on the agreement split, and options to buy the land remain available at any time. Example figures only; final terms depend on property selection, buyer credit, and market factors.</div>
 </section>
 
 <!-- ============ MODULE 4 ============ -->
@@ -217,7 +238,7 @@
 <!-- ============ MODULE 5 ============ -->
 <section>
   <span class="modlabel">Module 5 — Trust &amp; Normalcy Pillars</span>
-  <h2>Standard home purchase financing. Completely normal real estate.</h2>
+  <h2>Standard home purchase financing. A familiar home-buying process, with separate ownership of the home and land.</h2>
   <p class="sub">Families often ask if separating house and land is legal or complicated. The truth is, it feels just like a traditional home purchase because you work with your own real estate agent and traditional loan officer.</p>
 
   <div class="grid3">
@@ -248,6 +269,11 @@
     <div class="qa"><h3>Q: Can the land be purchased later?</h3><p>A: Yes. Homeowners can purchase the land from Jubilee at any time without buyout penalties, using transparent, public market data to determine pricing.</p></div>
     <div class="qa"><h3>Q: What happens when I want to sell?</h3><p>A: You sell your home on the open market just like any standard property. The new buyer can assume the land agreement or buy the house and land together. Sale proceeds are shared based on the agreement split — the equity you've built is 100% yours, along with your share of any appreciation.</p></div>
     <div class="qa"><h3>Q: How long does the closing process take?</h3><p>A: It operates on a standard 30-day escrow timeline, working seamlessly with title companies and traditional lenders.</p></div>
+    <div class="qa"><h3>Q: How is the land payment set, and does it change over time?</h3><p>A: Your land payment is set at the start of the agreement as a percentage of the land's appraised value, and it increases by 3% each year.</p></div>
+    <div class="qa"><h3>Q: How is the land value — and my share — determined?</h3><p>A: Independent third-party data sets it: AEI Housing Center land-share indicators, using county data first, then metro, then state, with the land share typically capped at about 70–75% so you always retain a meaningful stake. For example, on a $1,000,000 home with a 60% land share, Jubilee funds the $600,000 land and you fund the $400,000 home — and your down payment is calculated on the $400,000. If that home later sells for $1,500,000, the proceeds split gives Jubilee $900,000 and you $600,000.</p></div>
+    <div class="qa"><h3>Q: Can I make changes to the home?</h3><p>A: Yes — full freedom to modify: paint, add a pool, build an in-law unit. You keep 100% of the value of any improvements you make, and improvement value is subtracted from the buyout price, so Jubilee does not share in it.</p></div>
+    <div class="qa"><h3>Q: Can I rent the home out?</h3><p>A: After living in the home for one year, yes, with notice to Jubilee. The land payment increases by 15% while it is rented out.</p></div>
+    <div class="qa"><h3>Q: Is this rent-to-own?</h3><p>A: No. You own the home from day one; only the land is funded separately by Jubilee.</p></div>
   </div>
 </section>
 
@@ -266,6 +292,13 @@
 <footer>Research wireframe — copy taken verbatim from &ldquo;Website Wireframe Copy V2&rdquo; (master). Not a live page.</footer>
 
 <script>
+function toggleMath(btn){
+  var p = document.getElementById('mathPanel');
+  var open = p.hidden;
+  p.hidden = !open;
+  btn.setAttribute('aria-expanded', String(open));
+  btn.textContent = open ? 'Hide the math ▴' : 'See the math ▾';
+}
 function showHero(id, btn){
   document.querySelectorAll('.hero-variant').forEach(function(s){ s.style.display = (s.id === id) ? '' : 'none'; });
   document.querySelectorAll('.hv-btn').forEach(function(b){ b.classList.toggle('active', b === btn); });
