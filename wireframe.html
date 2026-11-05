@@ -12,6 +12,7 @@
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:#fff; line-height:1.55;}
+  html{scroll-behavior:smooth;}
 
   .reviewbar{position:sticky; top:12px; z-index:50; margin:12px 16px 0; background:#0c1a2e; color:#fff; border-radius:14px; padding:16px 22px; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; box-shadow:0 6px 24px rgba(12,26,46,.25);}
   .reviewtitle{font-weight:700; font-size:16px;}
@@ -33,7 +34,7 @@
   .sub{font-size:17px; color:#374151; max-width:720px; margin-top:14px;}
   .btn{display:inline-block; background:var(--brand); color:#fff; font-weight:700; font-size:15px; padding:13px 26px; border:none; border-radius:999px; cursor:pointer; margin-top:24px;}
   .btn:hover{background:var(--brand-dark);}
-  .mathbtn{display:inline-block; background:#fff; color:var(--brand-dark); border:1.5px solid var(--brand); font-weight:700; font-size:14.5px; padding:11px 22px; border-radius:999px; cursor:pointer; margin-top:22px;}
+  .mathbtn{display:inline-block; background:#fff; color:var(--brand-dark); border:1.5px solid var(--brand); font-weight:700; font-size:14.5px; padding:11px 22px; border-radius:999px; cursor:pointer; margin-top:22px; text-decoration:none;}
   .mathbtn:hover{background:var(--band);}
   .micro{font-size:13px; color:var(--muted); margin-top:14px;}
   .badges{font-size:13px; color:#374151; margin-top:8px; font-weight:600;}
@@ -197,8 +198,8 @@
     <tr><td>Estimated Monthly Payment</td><td>$5,778/mo</td><td class="jub">$5,172/mo</td></tr>
   </table>
 
-  <button class="mathbtn" type="button" aria-expanded="false" aria-controls="mathPanel" onclick="toggleMath(this)">See the math ▾</button>
-  <div id="mathPanel" hidden>
+  <a class="mathbtn" href="#mathPanel">See the math ↓</a>
+  <div id="mathPanel">
   <h3 style="font-size:20px; font-weight:800; margin-top:28px;">Deeper dive — the full breakdown</h3>
   <table>
     <tr><th>Metric</th><th>Traditional Mortgage</th><th class="jub">The Jubilee Approach</th></tr>
@@ -292,13 +293,6 @@
 <footer>Research wireframe — copy taken verbatim from &ldquo;Website Wireframe Copy V2&rdquo; (master). Not a live page.</footer>
 
 <script>
-function toggleMath(btn){
-  var p = document.getElementById('mathPanel');
-  var open = p.hidden;
-  p.hidden = !open;
-  btn.setAttribute('aria-expanded', String(open));
-  btn.textContent = open ? 'Hide the math ▴' : 'See the math ▾';
-}
 function showHero(id, btn){
   document.querySelectorAll('.hero-variant').forEach(function(s){ s.style.display = (s.id === id) ? '' : 'none'; });
   document.querySelectorAll('.hv-btn').forEach(function(b){ b.classList.toggle('active', b === btn); });
